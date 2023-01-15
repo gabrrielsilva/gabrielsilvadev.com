@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Matter Regular';
+  src: url(/fonts/Matter-Regular.otf);
+}
+
+@font-face {
+  font-family: 'Matter SemiBold';
+  src: url(/fonts/Matter-SemiBold.otf);
+}
+
+@font-face {
+  font-family: 'Matter Heavy';
+  src: url(/fonts/Matter-Heavy.otf);
+}
