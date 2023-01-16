@@ -1,0 +1,26 @@
+---
+import Button from "./Button.astro";
+---
+
+<header id="header" class="fixed top-0 z-10 flex justify-center w-full text-white transition duration-500">
+  <div class="flex items-center justify-between w-full h-24 px-3 max-w-7xl xl:px-0">
+    <h1 class="text-xl select-none font-matterSemiBold">Gabriel Silva</h1>
+    <section class="flex items-center gap-10">
+      <a class="hidden font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-300 hover:after:w-full" href="/projetos">Projetos</a>
+      <Button>Entrar em contato</Button>
+    </section>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('header') as HTMLElement;
+	window.onscroll = function () {
+    if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+      header.classList.add('text-black', 'bg-white/80', 'backdrop-blur-sm');
+      header.classList.remove('text-white');
+    } else {
+      header.classList.remove('text-black', 'bg-white/80', 'backdrop-blur-sm');
+      header.classList.add('text-white');
+    }
+  }
+</script>
