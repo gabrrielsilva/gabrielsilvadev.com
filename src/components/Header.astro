@@ -1,5 +1,5 @@
 ---
-import Button from "./Button.astro";
+import ContactButtonHeader from "./ContactButtonHeader.astro";
 ---
 
 <header id="header" class="fixed top-0 z-10 flex justify-center w-full text-white transition duration-500">
@@ -7,7 +7,7 @@ import Button from "./Button.astro";
     <h1 class="text-xl select-none font-matterSemiBold">Gabriel Silva</h1>
     <section class="flex items-center gap-10">
       <a class="hidden font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-300 hover:after:w-full" href="/projetos">Projetos</a>
-      <Button>Entrar em contato</Button>
+      <ContactButtonHeader />
     </section>
   </div>
 </header>

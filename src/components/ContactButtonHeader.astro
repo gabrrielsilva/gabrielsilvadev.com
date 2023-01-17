@@ -4,12 +4,12 @@
 <button
 	class="px-4 py-2 duration-200 border rounded-full bg-white/5 border-white/5 font-matterSemiBold hover:bg-white/10 focus:outline-none"
 >
-	<slot />
+	Entrar em contato
 </button>
 
 <script>
 	import confetti from 'canvas-confetti';
-	const button = document.body.querySelector('button');
+	const button = document.body.querySelector('button') as HTMLElement;
 
 	if (button) {
 		button.addEventListener('click', () => confetti());
