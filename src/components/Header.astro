@@ -2,7 +2,7 @@
 import ContactButtonHeader from "./ContactButtonHeader.astro";
 ---
 
-<header id="header" class="fixed top-0 z-10 flex justify-center w-full text-white transition duration-500">
+<header id="header" class="z-40 fixed top-0 flex justify-center w-full text-white transition duration-500">
   <div class="flex items-center justify-between w-full h-24 px-3 max-w-7xl xl:px-0">
     <h1 class="text-xl select-none font-matterSemiBold">Gabriel Silva</h1>
     <section class="flex items-center gap-10">
@@ -16,11 +16,11 @@ import ContactButtonHeader from "./ContactButtonHeader.astro";
   const header = document.getElementById('header') as HTMLElement;
 	window.onscroll = function () {
     if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
-      header.classList.add('text-black', 'bg-white/80', 'backdrop-blur-sm');
-      header.classList.remove('text-white');
+      header.classList.add('text-black', 'bg-black/80', 'backdrop-blur-md');
+      header.classList.remove('text-black');
     } else {
-      header.classList.remove('text-black', 'bg-white/80', 'backdrop-blur-sm');
-      header.classList.add('text-white');
+      header.classList.remove('text-black', 'bg-black/80', 'backdrop-blur-md');
+      header.classList.add('text-black');
     }
   }
 </script>

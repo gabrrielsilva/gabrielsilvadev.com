@@ -9,7 +9,7 @@ module.exports = {
 				matterRegular: ['Matter Regular'],
 				matterSemiBold: ['Matter SemiBold'],
 				matterHeavy: ['Matter Heavy']
-			}
+			},
 		},
 	},
 	plugins: [],
