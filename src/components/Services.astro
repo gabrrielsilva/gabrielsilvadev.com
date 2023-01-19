@@ -1,38 +1,59 @@
 ---
 import Card from "./Card.astro";
-import CardDescription from "./CardDescription.astro";
-import CardTitle from "./CardTitle.astro";
+import Quote from "./Quote.astro";
 
+const services = [
+  {
+    iconPath: '/icons/buying.png',
+    iconDescription: 'Carrinho de compras',
+    name: 'Ecommerce',
+    description: 'Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Eu posso construir um ecommerce e te ensinar a gerenciar preços e o estoque, e acompanhar as vendas, e depois analisando o comportamento do usuário, melhoramos a interface e sua experiência.'
+  },
+  {
+    iconPath: '/icons/handshake.png',
+    iconDescription: 'Aperto de mãos',
+    name: 'Landing Page',
+    description: 'Desenvolvidas estratégicamente para aumentar as taxas de conversão e alavancar seu negócio. Despertam a curiosidade, criam interesse e provocam desejo no público alvo, de modo que ele faça um pedido de orçamento ou de acesso à algum conteúdo, e até uma assinatura de newsletter. Isso agrega valor e gera leads, que posteriormente se tornarão bons clientes.'
+  },
+  {
+    iconPath: '/icons/workspace.png',
+    iconDescription: 'Área de trabalho',
+    name: 'Blog',
+    description: 'Com tecnologias focadas em conteúdo, eu posso construir um blog com design diferenciado e único, para que você publique seus conteúdos e ganhe engajamento com seu público. Meu objetivo é garantir que as pessoas invistam em sua marca, de modo que se envolvam com você e gastem dinheiro quando lançar novos conteúdos.'
+  },
+  {
+    iconPath: '/icons/touch-id.png',
+    iconDescription: 'Identidade',
+    name: 'Site',
+    description: 'Essencial para a presença online de qualquer negócio, crucial para gerar resultados. Quebre todas as barreiras geográficas e mostre quem você é e o que você faz. É o centralizador das estratégias de comunicação e quem vai construir sua imagem e credibilidade.'
+  },
+  {
+    iconPath: '/icons/laptop-with-cursor.png',
+    iconDescription: 'Notebook com cursor na tela',
+    name: 'Programa Desktop',
+    description: 'Com um clique em um arquivo executável seu problema é resolvido, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Geralmente usados para automatizar processos de manipulação de arquivos, economizando várias horas do seu tempo.'
+  },
+  {
+    iconPath: '/icons/smartphone.png',
+    iconDescription: 'Smartphone',
+    name: 'Aplicativo Mobile',
+    description: 'Com um clique em um arquivo executável o programa é iniciado, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Apresentam recursos semelhantes aos do explorador de arquivos do sistema operacional. Há muitos processos que podem ser automatizados, principalmente os repetitivos. Isso economiza várias horas do seu tempo.'
+  },
+]
 ---
 
-<div class='relative flex justify-center w-full h-full bg-white'>
-  <section class='flex flex-col w-full gap-20 my-24 max-w-7xl z-10'>
+<div class='relative flex flex-col items-center w-full h-full px-3 bg-white'>
+  <section class='z-10 flex flex-col w-full gap-20 pt-20 md:pt-40 max-w-7xl'>
     <h1 class='flex-initial text-4xl text-black sm:text-5xl font-matterRegular'>O que podemos construir juntos</h1>
-    <div class='grid flex-auto grid-cols-3 grid-rows-2 gap-10'>
-      <Card>
-        <CardTitle><img class="h-7 w-7" src="/icons/buying.png" alt="carrinho de compras"> Ecommerce</CardTitle>
-        <CardDescription>Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Eu posso construir um ecommerce e te ensinar a gerenciar preços e o estoque, e acompanhar as vendas, e depois analisando o comportamento do usuário, melhoramos a interface e sua experiência.</CardDescription>
-      </Card>
-      <Card>
-        <CardTitle><img class="h-7 w-7" src="/icons/handshake.png" alt="aperto de mãos"> Landing Page</CardTitle>
-        <CardDescription>Desenvolvidas estratégicamente para aumentar as taxas de conversão e alavancar seu negócio. Despertam a curiosidade, criam interesse e provocam desejo no público alvo, de modo que ele faça um pedido de orçamento ou de acesso à algum conteúdo, e até uma assinatura de newsletter. Isso agrega valor e gera leads, que posteriormente se tornarão bons clientes.</CardDescription>
-      </Card>
-      <Card>
-        <CardTitle><img class="h-7 w-7" src="/icons/workspace.png" alt="área de trabalho"> Blog</CardTitle>
-        <CardDescription>Com tecnologias focadas em conteúdo, eu posso construir um blog com design diferenciado e único, para que você publique seus conteúdos e ganhe engajamento com seu público. Meu objetivo é garantir que as pessoas invistam em sua marca, de modo que se envolvam com você e gastem dinheiro quando lançar novos conteúdos.</CardDescription>
-      </Card>
-      <Card>
-        <CardTitle><img class="h-7 w-7" src="/icons/touch-id.png" alt="identidade"> Site</CardTitle>
-        <CardDescription>Essencial para a presença online de qualquer negócio, crucial para gerar resultados. Quebre todas as barreiras geográficas e mostre quem você é e o que você faz. É o centralizador das estratégias de comunicação e quem vai construir sua imagem e credibilidade.</CardDescription>
-      </Card>
-      <Card>
-        <CardTitle><img class="h-7 w-7" src="/icons/laptop-with-cursor.png" alt="notebook com cursor na tela"> Programa Desktop</CardTitle>
-        <CardDescription>Com um clique em um arquivo executável o programa é iniciado, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Apresentam recursos semelhantes aos do explorador de arquivos do sistema operacional. Há muitos processos que podem ser automatizados, principalmente os repetitivos. Isso economiza várias horas do seu tempo.</CardDescription>
-      </Card>
-      <Card>
-        <CardTitle><img class="h-7 w-7" src="/icons/smartphone.png" alt="celular moderno"> Aplicativo Mobile</CardTitle>
-        <CardDescription>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum doloribus, distinctio maiores quod suscipit fugit iure perferendis deserunt pariatur incidunt soluta.</CardDescription>
-      </Card>
+    <div class='grid flex-auto gap-10 md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-2'>
+      {services.map(service => (
+        <Card 
+          icon={{ path: service.iconPath, description: service.iconDescription }} 
+          title={service.name} 
+          description={service.description} 
+        />
+      ))}
     </div>
   </section>
+  <Quote />
 </div>

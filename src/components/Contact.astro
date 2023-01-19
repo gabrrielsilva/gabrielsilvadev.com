@@ -1,0 +1,69 @@
+---
+import Brand from "./Brand.astro";
+
+const socialNetworks = [
+  {
+    name: 'LinkedIn',
+    iconPath: '/icons/linkedin.png',
+    link: 'https://linkedin.com/in/gabriel-silva-44a075208'
+  },
+  {
+    name: 'GitHub',
+    iconPath: '/icons/github.png',
+    link: 'https://github.com/gabrrielsilva'
+  },
+  {
+    name: 'Twitter',
+    iconPath: '/icons/twitter.png',
+    link: 'https://twitter.com/gabrielsqrt'
+  }
+]
+
+const contacts = [
+  {
+    iconPath: 'icons/mail.png',
+    iconDescription: 'envelope',
+    contact: 'gabrielsilvaev@gmail.com'
+  },
+  {
+    iconPath: 'icons/whatsapp.png',
+    iconDescription: 'logo do whatsapp',
+    contact: '(15) 99748 5358'
+  },
+  {
+    iconPath: 'icons/telephone.png',
+    iconDescription: 'telefone',
+    contact: '(15) 99777 3109'
+  },
+  {
+    iconPath: 'icons/location.png',
+    iconDescription: 'marcador de mapa',
+    contact: 'Salto de Pirapora - SP'
+  }
+]
+---
+
+<div class="flex justify-center w-full h-screen bg-black">
+  <div class="w-full px-3 py-40 lg:px-0 max-w-7xl">
+    <h1 class="text-5xl text-white font-matterHeavy">Vamos conversar?</h1>
+    <section class="my-40">
+      <Brand />
+      <small class="text-gray-400">Desenvolvedor full stack</small>
+      <div class="flex items-center gap-5 mt-3 -ml-1 invert">
+        {socialNetworks.map(socialNetwork => (
+          <a href={socialNetwork.link}>
+            <img class='w-[1.8rem] h-[1.8rem]' src={socialNetwork.iconPath} alt={socialNetwork.name}>
+          </a>
+        ))}
+      </div>
+    </section>
+    <section class="grid gap-3 invert">
+      {contacts.map(contact => (
+        <div class="flex items-center gap-3">
+          <img class='-ml-2 w-[1.8rem] h-[1.8rem]' src={contact.iconPath} alt={contact.iconDescription}>
+          <p class="text-lg font-matterRegular">{contact.contact}</p>
+        </div>
+      ))}
+    </section>
+  </div>
+</div>
