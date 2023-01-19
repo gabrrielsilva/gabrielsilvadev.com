@@ -1,5 +1,6 @@
 ---
 import Brand from "./Brand.astro";
+import Tooltip from "./Tooltip.astro";
 
 const socialNetworks = [
   {
@@ -21,19 +22,25 @@ const socialNetworks = [
 
 const contacts = [
   {
+    name: 'mail',
     iconPath: 'icons/mail.png',
     iconDescription: 'envelope',
-    contact: 'gabrielsilvaev@gmail.com'
+    contact: 'gabrielsilvaev@gmail.com',
+    link: 'mailto:gabrielsilvaev@gmail.com'
   },
   {
+    name: 'whatsapp',
     iconPath: 'icons/whatsapp.png',
     iconDescription: 'logo do whatsapp',
-    contact: '(15) 99748 5358'
+    contact: '15 99748 5358',
+    link: 'https://wa.me/5515997485358'
   },
   {
+    name: 'telephone',
     iconPath: 'icons/telephone.png',
     iconDescription: 'telefone',
-    contact: '(15) 99777 3109'
+    contact: '15 99777 3109',
+    link: 'tel:15997773109'
   },
   {
     iconPath: 'icons/location.png',
@@ -49,7 +56,7 @@ const contacts = [
     <section class="my-40">
       <Brand />
       <small class="text-gray-400">Desenvolvedor full stack</small>
-      <div class="flex items-center gap-5 mt-3 -ml-1 invert">
+      <div class="flex items-center gap-3 mt-3 -ml-1 invert">
         {socialNetworks.map(socialNetwork => (
           <a href={socialNetwork.link}>
             <img class='w-[1.8rem] h-[1.8rem]' src={socialNetwork.iconPath} alt={socialNetwork.name}>
@@ -57,13 +64,32 @@ const contacts = [
         ))}
       </div>
     </section>
-    <section class="grid gap-3 invert">
+    <section class="grid gap-3">
       {contacts.map(contact => (
         <div class="flex items-center gap-3">
-          <img class='-ml-2 w-[1.8rem] h-[1.8rem]' src={contact.iconPath} alt={contact.iconDescription}>
-          <p class="text-lg font-matterRegular">{contact.contact}</p>
+          <a class="flex items-center gap-3 text-white w-max" href={contact.link}>
+            <img class='-ml-2 w-[1.8rem] h-[1.8rem] invert' src={contact.iconPath} alt={contact.iconDescription}>
+            <p class="cursor-pointer text-lg font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-500 hover:after:w-full">{contact.contact}</p>
+          </a>
+          <div class="transition duration-300 opacity-30 hover:opacity-100">
+            <Tooltip tooltipText="Copiar contato">
+              <button id={contact.name} value={contact.contact}>
+                <img class="w-5 h-5 -mb-1 invert" src="/icons/copy-to-clipboard.png" alt="copiar contato">
+              </button>
+            </Tooltip>
+          </div>
         </div>
       ))}
     </section>
   </div>
 </div>
+
+<script>
+  const mailButton = document.getElementById('mail') as HTMLButtonElement;
+  const whatsappButton = document.getElementById('whatsapp') as HTMLButtonElement;
+  const telephoneButton = document.getElementById('telephone') as HTMLButtonElement;
+
+  mailButton.addEventListener('click', () => navigator.clipboard.writeText(mailButton.value));
+  whatsappButton.addEventListener('click', () => navigator.clipboard.writeText(whatsappButton.value));
+  telephoneButton.addEventListener('click', () => navigator.clipboard.writeText(telephoneButton.value));
+</script>
