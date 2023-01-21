@@ -1,58 +1,68 @@
 ---
-import Card from "./Card.astro";
-import Quote from "./Quote.astro";
+import Card from './Card.astro';
+import Quote from './Quote.astro';
 
 const services = [
   {
     iconPath: '/icons/buying.png',
     iconDescription: 'Carrinho de compras',
     name: 'Ecommerce',
-    description: 'Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Eu posso construir um ecommerce e te ensinar a gerenciar preços e o estoque, e acompanhar as vendas, e depois analisando o comportamento do usuário, melhoramos a interface e sua experiência.'
+    description:
+      'Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Eu posso construir um ecommerce e te ensinar a gerenciar preços e o estoque, e acompanhar as vendas.',
   },
   {
     iconPath: '/icons/handshake.png',
     iconDescription: 'Aperto de mãos',
     name: 'Landing Page',
-    description: 'Desenvolvidas estratégicamente para aumentar as taxas de conversão e alavancar seu negócio. Despertam a curiosidade, criam interesse e provocam desejo no público alvo, de modo que ele faça um pedido de orçamento ou de acesso à algum conteúdo, e até uma assinatura de newsletter. Isso agrega valor e gera leads, que posteriormente se tornarão bons clientes.'
+    description:
+      'Desenvolvidas estratégicamente para aumentar as taxas de conversão e alavancar seu negócio. Despertam a curiosidade, criam interesse e provocam desejo no público alvo, de modo que ele faça um pedido de orçamento ou de acesso à algum conteúdo. Isso agrega valor e gera leads, que posteriormente se tornarão bons clientes.',
   },
   {
     iconPath: '/icons/workspace.png',
     iconDescription: 'Área de trabalho',
     name: 'Blog',
-    description: 'Com tecnologias focadas em conteúdo, eu posso construir um blog com design diferenciado e único, para que você publique seus conteúdos e ganhe engajamento com seu público. Meu objetivo é garantir que as pessoas invistam em sua marca, de modo que se envolvam com você e gastem dinheiro quando lançar novos conteúdos.'
+    description:
+      'Posso construir um blog com design diferenciado e único, para que você publique seus conteúdos e ganhe engajamento com seu público. Meu objetivo é garantir que as pessoas invistam em sua marca, de modo que se envolvam com você e gastem dinheiro quando lançar novos conteúdos.',
   },
   {
     iconPath: '/icons/touch-id.png',
     iconDescription: 'Identidade',
     name: 'Site',
-    description: 'Essencial para a presença online de qualquer negócio, crucial para gerar resultados. Quebre todas as barreiras geográficas e mostre quem você é e o que você faz. É o centralizador das estratégias de comunicação e quem vai construir sua imagem e credibilidade.'
+    description:
+      'Essencial para a presença online de qualquer negócio, crucial para gerar resultados. Quebre todas as barreiras geográficas e mostre quem você é e o que você faz. É o centralizador das estratégias de comunicação e quem vai construir sua imagem e credibilidade.',
   },
   {
     iconPath: '/icons/laptop-with-cursor.png',
     iconDescription: 'Notebook com cursor na tela',
     name: 'Programa Desktop',
-    description: 'Com um clique em um arquivo executável seu problema é resolvido, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Geralmente usados para automatizar processos de manipulação de arquivos, economizando várias horas do seu tempo.'
+    description:
+      'Com um clique em um arquivo executável seu problema é resolvido, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Geralmente usados para automatizar processos de manipulação de arquivos, economizando várias horas do seu tempo.',
   },
   {
     iconPath: '/icons/smartphone.png',
     iconDescription: 'Smartphone',
     name: 'Aplicativo Mobile',
-    description: 'Com um clique em um arquivo executável o programa é iniciado, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Apresentam recursos semelhantes aos do explorador de arquivos do sistema operacional. Há muitos processos que podem ser automatizados, principalmente os repetitivos. Isso economiza várias horas do seu tempo.'
+    description:
+      'Com um clique em um arquivo executável o programa é iniciado, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Apresentam recursos semelhantes aos do explorador de arquivos do sistema operacional.',
   },
-]
+];
 ---
 
 <div class='relative flex flex-col items-center w-full h-full px-3 bg-white'>
   <section class='z-10 flex flex-col w-full gap-20 pt-20 md:pt-40 max-w-7xl'>
-    <h1 class='flex-initial text-4xl text-black sm:text-5xl font-matterRegular'>O que podemos construir juntos</h1>
+    <h1 class='flex-initial text-4xl text-black sm:text-5xl font-matterRegular'>
+      O que podemos construir juntos
+    </h1>
     <div class='grid flex-auto gap-10 md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-2'>
-      {services.map(service => (
-        <Card 
-          icon={{ path: service.iconPath, description: service.iconDescription }} 
-          title={service.name} 
-          description={service.description} 
-        />
-      ))}
+      {
+        services.map((service) => (
+          <Card
+            icon={{ path: service.iconPath, description: service.iconDescription }}
+            title={service.name}
+            description={service.description}
+          />
+        ))
+      }
     </div>
   </section>
   <Quote />

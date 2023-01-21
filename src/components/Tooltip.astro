@@ -1,14 +1,14 @@
 ---
 export interface Props {
-  tooltipText: string,
+  tooltipText: string;
 }
 
 const { tooltipText } = Astro.props;
 ---
 
-<div class="relative inline-block tooltip">
+<div class='relative inline-block tooltip'>
   <slot />
-  <span class="tooltiptext">{tooltipText}</span>
+  <span class='tooltiptext'>{tooltipText}</span>
 </div>
 
 <style>
@@ -37,7 +37,7 @@ const { tooltipText } = Astro.props;
 
   /* Tooltip arrow */
   .tooltip .tooltiptext::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 100%;
     left: 50%;
