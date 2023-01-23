@@ -1,8 +1,33 @@
 ---
+import Carousel from "./Carousel.astro";
 ---
 
-<div class='flex items-center justify-center w-full h-screen bg-brand'>
-  <div class='w-full h-full px-3 py-40 max-w-7xl md:px-0'>
-    <h1 class='w-full text-4xl text-black md:text-6xl font-matterHeavy'>Projetos</h1>
+<div id='projects' class='flex items-center justify-center w-full h-screen bg-[#121212]'>
+  <div class='flex flex-col w-full h-auto gap-10 px-3 max-w-7xl md:px-0'>
+    <h1 class='w-full mt-20 text-4xl text-white md:text-6xl font-matterHeavy'>Projetos</h1>
+    <section class="w-full h-[40rem] rounded-3xl p-3 bg-white/30">
+      <Carousel 
+        projects={[
+          { 
+            name: 'Infinitel: site e sistema de gestão de projetos', 
+            link: 'https://infinitel-telecom.com',
+            images: [
+              { src: 'images/infinitel/home.png', alt: 'inicio do site infinitel' },
+              { src: 'images/infinitel/edit-project.png', alt: 'edição de projeto no sistema infinitel' },
+              { src: 'images/infinitel/base.png', alt: 'tabela de projetos no sistema infinitel' },
+              { src: 'images/infinitel/calendar.png', alt: 'calendário no sistema infinitel' },
+              { src: 'images/infinitel/dashboard.png', alt: 'dashboard no sistema infinitel' },
+            ]
+          },
+          { 
+            name: 'Pholeport: gerador de relatórios fotográficos', 
+            images: [
+              { src: 'images/pholeport/home.png', alt: 'inicio do gerador de relatórios fotográficos' },
+              { src: 'images/pholeport/report.png', alt: 'relatório resultante do gerador' },
+            ]
+          }
+        ]}
+      />
+    </section>
   </div>
 </div>

@@ -7,7 +7,7 @@ import ContactButtonHeader from './ContactButtonHeader.astro';
   <div class='flex items-center justify-between w-full h-24 px-3 max-w-7xl xl:px-0'>
     <Brand />
     <section class='flex items-center gap-10 blend'>
-      <a class='hidden font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-300 hover:after:w-full' href='/projetos'>Projetos</a>
+      <button id="projects_button_header" class='hidden font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-300 hover:after:w-full'>Projetos</button>
       <ContactButtonHeader />
     </section>
   </div>
@@ -15,6 +15,7 @@ import ContactButtonHeader from './ContactButtonHeader.astro';
 
 <script>
   const header = document.getElementById('header') as HTMLElement;
+  const projectsButton = document.getElementById('projects_button_header') as HTMLButtonElement;
   
 	window.onscroll = function () {
     if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
@@ -23,4 +24,6 @@ import ContactButtonHeader from './ContactButtonHeader.astro';
       header.classList.remove('bg-black/80', 'backdrop-blur-md');
     }
   }
+
+  projectsButton.addEventListener('click', () => (document.getElementById('projects') as HTMLDivElement).scrollIntoView());
 </script>

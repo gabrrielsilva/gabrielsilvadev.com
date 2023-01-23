@@ -1,0 +1,75 @@
+---
+export interface Props {
+  projects: {
+    name: string,
+    link?: string,
+    images: {
+      src: string,
+      alt: string
+    }[]
+  }[]
+}
+
+const { projects } = Astro.props;
+---
+
+<div class='relative w-full h-full rounded-2xl'>
+  {projects.map(project => (
+    <div class='w-full h-full bg-brand mySlides fade rounded-2xl'>
+      <section class="grid w-full h-full gap-1 overflow-y-scroll pb-9 place-items-center rounded-2xl scrollbar-thin">
+        {project.images.map(image => (
+          <img class="select-none min-w-[50rem]" src={image.src} alt={image.alt}>
+        ))}
+      </section>
+      <div class='absolute bottom-0 w-full py-1 text-xl text-center text-white font-matterSemiBold bg-black/40 backdrop-blur-sm rounded-b-2xl'>
+        {project.name}
+        {project.link ? (
+          <a class="absolute bottom-0 flex items-center h-full gap-2 text-sm font-matterRegular right-5" href={project?.link}>
+            <img class="w-5 h-5 invert" src="icons/external-link.png" alt="icone de link externo">
+            Ver projeto
+          </a>
+        ): ''}
+      </div>
+    </div>
+  ))}
+
+  <div class='text-2xl font-bold text-white select-none'>
+    <button id='prev' class='hover:bg-black/80 w-min absolute top-1/2 -left-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10094;</button>
+    <button id='next' class='hover:bg-black/80 w-min absolute top-1/2 -right-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10095;</button>
+  </div>
+</div>
+
+<style>
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+</style>
+
+<script>
+  (document.getElementById('prev') as HTMLButtonElement).addEventListener('click', () => plusSlides(-1));
+  (document.getElementById('next') as HTMLButtonElement).addEventListener('click', () => plusSlides(1));
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n: number) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n: number) {
+    let i;
+    let slides = document.getElementsByClassName('mySlides');
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      (slides[i] as HTMLElement).style.display = 'none';
+    }
+    (slides[slideIndex-1] as HTMLElement).style.display = 'block';
+  }
+</script>
