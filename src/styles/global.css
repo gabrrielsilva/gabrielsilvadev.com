@@ -12,3 +12,7 @@
   font-family: 'Matter Heavy';
   src: url(/fonts/Matter-Heavy.otf);
 }
+
+html {
+  @apply scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-purple-600
+}
