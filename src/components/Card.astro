@@ -8,7 +8,7 @@ export interface Props {
 const { icon, title, description } = Astro.props;
 ---
 
-<div class='flex flex-col h-full md:h-[20rem] lg:h-[17rem] xl:h-[22rem] p-10 transition duration-500 bg-white border rounded-lg cursor-default max-h-max border-black/50 hover:border-r-2 hover:border-b-2 hover:border-b-brand hover:border-r-brand'>
+<div class='flex flex-col h-full md:h-[20rem] lg:h-[17rem] xl:h-[22rem] p-10 transition duration-500 bg-white/10 border rounded-lg cursor-default max-h-max border-black/50 hover:border-r-2 hover:border-b-2 hover:border-b-brand hover:border-r-brand'>
   <div class='flex flex-col h-full gap-2 xl:mt-5'>
     <header class='flex w-full gap-2'>
       <img class='h-7 w-7' src={icon.path} alt={icon.description}>

@@ -3,7 +3,7 @@ import Brand from './Brand.astro';
 import ContactButtonHeader from './ContactButtonHeader.astro';
 ---
 
-<header id='header' class='fixed top-0 z-40 flex justify-center w-full text-white transition duration-500'>
+<header id='header' class='fixed top-0 z-40 flex justify-center w-full text-white transition duration-500 backdrop-blur-md'>
   <div class='flex items-center justify-between w-full h-20 px-3 max-w-7xl xl:px-0'>
     <Brand />
     <section class='flex items-center gap-10 blend'>
@@ -16,12 +16,28 @@ import ContactButtonHeader from './ContactButtonHeader.astro';
 <script>
   const header = document.getElementById('header') as HTMLElement;
   const projectsButton = document.getElementById('projects_button_header') as HTMLButtonElement;
-  
+  const presentation = document.getElementById('presentation') as HTMLDivElement;
+  const services = document.getElementById('services') as HTMLDivElement;
+  const contact = document.getElementById('contact') as HTMLDivElement;
+
+  const resetHeaderExtraStyles = 'fixed top-0 z-40 flex justify-center w-full text-white transition duration-500 backdrop-blur-md';
+  const doc = document.documentElement;
+  const maximum = +(doc.scrollTop / doc.scrollHeight - doc.clientHeight);
+
 	window.onscroll = function () {
-    if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
-      header.classList.add('bg-black/80', 'backdrop-blur-md');
-    } else {
-      header.classList.remove('bg-black/80', 'backdrop-blur-md');
+    if (doc.scrollTop <= 10) {
+      header.classList.value = resetHeaderExtraStyles;
+    } else if (doc.scrollTop > 10 && doc.scrollTop <= presentation.scrollHeight) {
+      header.classList.value = resetHeaderExtraStyles;
+      header.classList.add('bg-black/50', 'text-white');
+    } else if (doc.scrollTop <= services.scrollHeight) {
+      header.classList.value = resetHeaderExtraStyles;
+      header.classList.add('bg-white/50', 'text-black', 'border-b', 'border-gray-500/20');
+    } else if (doc.scrollTop > presentation.scrollHeight + services.scrollHeight && doc.scrollTop < doc.scrollHeight - contact.scrollHeight) {
+      header.classList.value = resetHeaderExtraStyles;
+      header.classList.add('bg-black/50', 'text-white');
+    } else if (doc.scrollTop >= doc.scrollHeight - contact.scrollHeight) {
+      header.classList.value = resetHeaderExtraStyles;
     }
   }
 
