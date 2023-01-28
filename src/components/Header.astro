@@ -20,17 +20,17 @@ import ContactButtonHeader from './ContactButtonHeader.astro';
   const services = document.getElementById('services') as HTMLDivElement;
   const contact = document.getElementById('contact') as HTMLDivElement;
 
-  const resetHeaderExtraStyles = 'fixed top-0 z-40 flex justify-center w-full text-white transition duration-500 backdrop-blur-md';
+  const resetHeaderExtraStyles = 'fixed top-0 z-40 flex justify-center w-full transition duration-500 backdrop-blur-md';
   const doc = document.documentElement;
-  const maximum = +(doc.scrollTop / doc.scrollHeight - doc.clientHeight);
 
 	window.onscroll = function () {
     if (doc.scrollTop <= 10) {
       header.classList.value = resetHeaderExtraStyles;
+      header.classList.add('text-white');
     } else if (doc.scrollTop > 10 && doc.scrollTop <= presentation.scrollHeight) {
       header.classList.value = resetHeaderExtraStyles;
       header.classList.add('bg-black/50', 'text-white');
-    } else if (doc.scrollTop <= services.scrollHeight) {
+    } else if (doc.scrollTop <= services.scrollHeight && doc.scrollTop > presentation.scrollHeight) {
       header.classList.value = resetHeaderExtraStyles;
       header.classList.add('bg-white/50', 'text-black', 'border-b', 'border-gray-500/20');
     } else if (doc.scrollTop > presentation.scrollHeight + services.scrollHeight && doc.scrollTop < doc.scrollHeight - contact.scrollHeight) {
@@ -38,6 +38,7 @@ import ContactButtonHeader from './ContactButtonHeader.astro';
       header.classList.add('bg-black/50', 'text-white');
     } else if (doc.scrollTop >= doc.scrollHeight - contact.scrollHeight) {
       header.classList.value = resetHeaderExtraStyles;
+      header.classList.add('text-white');
     }
   }
 
