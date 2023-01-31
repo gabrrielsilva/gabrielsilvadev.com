@@ -6,7 +6,8 @@ export interface Props {
     link?: string,
     images: {
       src: string,
-      alt: string
+      alt: string,
+      extraStyles?: string
     }[]
   }[]
 }
@@ -23,7 +24,7 @@ const { projects } = Astro.props;
       </div>
       <section id='scroll-projects' class='grid w-full h-full gap-1 overflow-y-scroll overflow-x-hidden pb-9 place-items-center rounded-l-2xl scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-brand'>
         {project.images.map(image => (
-          <img class='select-none md:min-w-[50rem] rounded-xl' src={image.src} alt={image.alt}>
+          <img class={'select-none rounded-xl ' + image.extraStyles} src={image.src} alt={image.alt}>
         ))}
       </section>
       <div class='absolute bottom-0 w-full py-1 text-xl text-center text-white font-matterSemiBold bg-black/50 backdrop-blur-sm rounded-bl-2xl'>
