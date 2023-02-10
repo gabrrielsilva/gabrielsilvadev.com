@@ -16,3 +16,13 @@
 html {
   @apply scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-gray-500
 }
+
+.macbook {
+  -webkit-mask-image: url(/images/macbook/macbook-mask.png);
+  -webkit-mask-size: 100%;
+}
+
+.screen {
+  -webkit-mask-image: url(/images/macbook/screen-mask.png);
+  -webkit-mask-size: 100%;
+}
