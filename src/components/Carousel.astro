@@ -27,12 +27,14 @@ const { projects } = Astro.props;
           <img class={'select-none rounded-xl ' + image.extraStyles} src={image.src} alt={image.alt}>
         ))}
       </section>
-      <div class='absolute bottom-0 w-full py-1 text-xl text-center text-black bg-white rounded-b-xl font-matterSemiBold backdrop-blur-sm'>
-        {project.name}
+      <div class='absolute bottom-0 w-full py-1 text-center bg-white rounded-b-xl backdrop-blur-sm'>
+        <p class="font-matterSemiBold text-[16px] sm:text-xl text-black">
+          {project.name}
+        </p>
         {project.link ? (
-          <a class='absolute bottom-0 items-center hidden h-full gap-2 text-sm sm:flex font-matterRegular right-5' href={project?.link}>
+          <a class='absolute bottom-0 items-center hidden h-full gap-2 sm:flex right-5' href={project?.link}>
             <img class='w-5 h-5' src='icons/externallink.svg' alt='icone de link externo'>
-            Ver projeto
+            <span class="text-[16px] font-matterRegular">Ver projeto</span>
           </a>
         ): ''}
       </div>
