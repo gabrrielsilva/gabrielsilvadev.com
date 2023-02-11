@@ -4,66 +4,66 @@ import Quote from './Quote.astro';
 
 const services = [
   {
-    iconPath: '/icons/buying.png',
-    iconDescription: 'Carrinho de compras',
+    icon: 'icons/ecommerce.svg',
     name: 'Ecommerce',
-    description:
-      'Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Eu posso construir um ecommerce e te ensinar a gerenciar preços e o estoque, e acompanhar as vendas.',
+    description: 'Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Eu posso construir um ecommerce e te ensinar a gerenciar preços e o estoque, e acompanhar as vendas.',
+    bgIcon: 'bg-[#4cd0e6]/50'
   },
   {
-    iconPath: '/icons/handshake.png',
-    iconDescription: 'Aperto de mãos',
+    icon: '/icons/landingpage.svg',
     name: 'Landing Page',
-    description:
-      'Desenvolvidas estratégicamente para aumentar as taxas de conversão e alavancar seu negócio. Despertam a curiosidade, criam interesse e provocam desejo no público alvo, de modo que ele faça um pedido de orçamento ou de acesso à algum conteúdo. Isso agrega valor e gera leads, que posteriormente se tornarão bons clientes.',
+    description: 'Desenvolvidas estratégicamente para aumentar as taxas de conversão e alavancar seu negócio. Despertam a curiosidade, criam interesse e provocam desejo no público alvo, de modo que ele faça um pedido de orçamento ou de acesso à algum conteúdo. Isso agrega valor e gera leads, que posteriormente se tornarão bons clientes.',
+    bgIcon: 'bg-[#ffef1d]/50'
   },
   {
-    iconPath: '/icons/workspace.png',
-    iconDescription: 'Área de trabalho',
+    icon: '/icons/blog.svg',
     name: 'Blog',
-    description:
-      'Posso construir um blog com design diferenciado e único, para que você publique seus conteúdos e ganhe engajamento com seu público. Meu objetivo é garantir que as pessoas invistam em sua marca, de modo que se envolvam com você e gastem dinheiro quando lançar novos conteúdos.',
+    description: 'Posso construir um blog com design diferenciado e único, para que você publique seus conteúdos e ganhe engajamento com seu público. Meu objetivo é garantir que as pessoas invistam em sua marca, de modo que se envolvam com você e gastem dinheiro quando lançar novos conteúdos.',
+    bgIcon: 'bg-[#ff981d]/70'
   },
   {
-    iconPath: '/icons/touch-id.png',
-    iconDescription: 'Identidade',
+    icon: '/icons/website.svg',
     name: 'Site',
-    description:
-      'Essencial para a presença online de qualquer negócio, crucial para gerar resultados. Quebre todas as barreiras geográficas e mostre quem você é e o que você faz. É o centralizador das estratégias de comunicação e quem vai construir sua imagem e credibilidade.',
+    description: 'Essencial para a presença online de qualquer negócio, crucial para gerar resultados. Quebre todas as barreiras geográficas e mostre quem você é e o que você faz. É o centralizador das estratégias de comunicação e quem vai construir sua imagem e credibilidade.',
+    bgIcon: 'bg-[#ff546b]/60'
   },
   {
-    iconPath: '/icons/laptop-with-cursor.png',
-    iconDescription: 'Notebook com cursor na tela',
+    icon: '/icons/desktop.svg',
     name: 'Programa Desktop',
-    description:
-      'Com um clique em um arquivo executável seu problema é resolvido, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Geralmente usados para automatizar processos de manipulação de arquivos, economizando várias horas do seu tempo.',
+    description: 'Com um clique em um arquivo executável seu problema é resolvido, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Geralmente usados para automatizar processos de manipulação de arquivos, economizando várias horas do seu tempo.',
+    bgIcon: 'bg-[#1ed05f]/50'
   },
   {
-    iconPath: '/icons/smartphone.png',
-    iconDescription: 'Smartphone',
+    icon: '/icons/mobile.svg',
     name: 'Aplicativo Mobile',
-    description:
-      'Aproxima e fideliza clientes, de modo que a empresa se mostre presente no dia a dia do consumidor. Um aplicativo mobile também otimiza processos e aprimora o atendimento e experiência do usuário. Posso fortalecer sua marca construindo um app multiplataforma, que rode no Android e IOS.',
+    description: 'Aproxima e fideliza clientes, de modo que a empresa se mostre presente no dia a dia do consumidor. Um aplicativo mobile também otimiza processos e aprimora o atendimento e experiência do usuário. Posso fortalecer sua marca construindo um app multiplataforma, que rode no Android e IOS.',
+    bgIcon: 'bg-[#806bf6]/50'
   },
 ];
 ---
 
-<div id="services" class='relative flex flex-col items-center w-full h-full px-3 bg-white'>
-  <section class='z-10 flex flex-col w-full gap-20 pt-20 md:pt-40 max-w-7xl'>
-    <h1 class='flex-initial text-4xl text-black sm:text-5xl font-matterRegular'>
-      O que podemos construir juntos
-    </h1>
-    <div class='grid flex-auto gap-10 md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-2'>
+<div id="services" class='relative flex flex-col items-center w-full h-full px-3 bg-[#f9f8f2]'>
+  <div class='z-10 flex flex-col w-full gap-20 pt-20 md:pt-32 max-w-6xl'>
+    <header class="flex flex-col gap-5">
+      <h1 class='flex-initial text-4xl text-black sm:text-5xl font-matterRegular'>
+        O que vamos construir juntos?
+      </h1>
+      <h2 class="font-matterRegular text-lg md:text-xl text-neutral-700">
+        Se você tem problemas de organização, tempo, comunicação, padronização, ou quer ganhar mais dinheiro, está no lugar certo.
+      </h2>
+    </header>
+    <section class='grid flex-auto gap-10 md:grid-cols-2'>
       {
         services.map((service) => (
           <Card
-            icon={{ path: service.iconPath, description: service.iconDescription }}
+            icon={service.icon}
+            bgIcon={service.bgIcon}
             title={service.name}
             description={service.description}
           />
         ))
       }
-    </div>
-  </section>
+    </section>
+  </div>
   <Quote />
 </div>

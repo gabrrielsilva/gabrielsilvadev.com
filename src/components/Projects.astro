@@ -1,22 +1,23 @@
 ---
 import Carousel from "./Carousel.astro";
+import CompaniesBenefited from './CompaniesBenefited.astro';
 ---
 
-<div id='projects' class='flex md:items-center justify-center w-full h-screen bg-black px-3 xl:px-0'>
-  <div class='flex flex-col w-full h-auto gap-10 max-w-7xl'>
-    <h1 class='w-full mt-28 md:mt-10 text-4xl text-white md:text-6xl font-matterHeavy'>Projetos</h1>
-    <section class="w-full h-[60vh] rounded-l-3xl rounded-r p-3 pr-0 bg-white/10">
+<div id='projects' class='flex md:items-center justify-center w-full h-full min-h-screen bg-[#0b0b0f] px-3 xl:px-0'>
+  <div class='flex flex-col w-full h-auto max-w-6xl gap-10'>
+    <h1 class='w-full mt-20 text-3xl text-white md:mt-40 md:text-5xl font-matterSemiBold'>Projetos</h1>
+    <section class="w-full h-[60vh] rounded-xl p-[0.1rem] pr-0 bg-white/10">
       <Carousel 
         projects={[
           { 
             name: 'Infinitel: site e sistema de gestão de projetos', 
             link: 'https://infinitel-telecom.com',
             images: [
-              { src: 'images/infinitel/home.png', alt: 'inicio do site infinitel' },
               { src: 'images/infinitel/edit-project.png', alt: 'edição de projeto no sistema infinitel' },
               { src: 'images/infinitel/base.png', alt: 'tabela de projetos no sistema infinitel' },
               { src: 'images/infinitel/calendar.png', alt: 'calendário no sistema infinitel' },
               { src: 'images/infinitel/dashboard.png', alt: 'dashboard no sistema infinitel' },
+              { src: 'images/infinitel/home.png', alt: 'inicio do site infinitel' },
             ]
           },
           { 
@@ -36,5 +37,6 @@ import Carousel from "./Carousel.astro";
         ]}
       />
     </section>
+    <CompaniesBenefited />
   </div>
 </div>

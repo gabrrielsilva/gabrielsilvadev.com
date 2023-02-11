@@ -23,14 +23,14 @@ const socialNetworks = [
 const contacts = [
   {
     name: 'mail',
-    iconPath: 'icons/mail.png',
+    iconPath: 'icons/mail.svg',
     iconDescription: 'envelope',
     contact: 'gabrielsilvaev@gmail.com',
     link: 'mailto:gabrielsilvaev@gmail.com'
   },
   {
     name: 'whatsapp',
-    iconPath: 'icons/whatsapp.png',
+    iconPath: 'icons/chat.svg',
     iconDescription: 'logo do whatsapp',
     contact: '15 99748 5358',
     link: 'https://wa.me/5515997485358'
@@ -43,7 +43,7 @@ const contacts = [
     link: 'tel:15997773109'
   },
   {
-    iconPath: 'icons/location.png',
+    iconPath: 'icons/placemark.svg',
     iconDescription: 'marcador de mapa',
     contact: 'Salto de Pirapora - SP'
   }
@@ -64,7 +64,7 @@ const contacts = [
             <div class='transition duration-300 opacity-30 hover:opacity-100'>
               <Tooltip tooltipText='Copiar contato'>
                 <button id={contact.name} value={contact.contact}>
-                  <img class='w-5 h-5 -mb-1 invert' src='/icons/copy-to-clipboard.png' alt='copiar contato'>
+                  <img class='w-6 h-6 -mb-1 invert' src='/icons/clipboard.svg' alt='copiar contato'>
                 </button>
               </Tooltip>
             </div>
@@ -76,7 +76,7 @@ const contacts = [
       <div class='w-full p-2 overflow-hidden rounded-lg md:w-auto md:h-80 bg-white/20'>
         <img class='object-contain w-full h-full rounded-md saturate-150' src='images/gabriel.jpg' alt=''>
       </div>
-      <div class='text-start md:text-end text-white'>
+      <div class='text-white text-start md:text-end'>
         <Brand />
         <small class='text-gray-400'>Desenvolvedor full stack</small>
         <div class='flex items-center justify-start gap-3 mt-3 -ml-1 md:justify-end invert'>

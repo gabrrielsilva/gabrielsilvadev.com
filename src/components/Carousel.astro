@@ -15,23 +15,23 @@ export interface Props {
 const { projects } = Astro.props;
 ---
 
-<div class='relative w-full h-full rounded-l-2xl'>
+<div class='relative w-full h-full rounded-xl'>
   {projects.map(project => (
-    <div class='w-full h-full bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 mySlides fade rounded-l-2xl'>
-      <div id='scroll-alert' class='hidden md:flex absolute -right-16 -top-20 text-2xl flex-col items-center animate-bounce opacity-60 text-white font-matterRegular'>
-        <small class='text-sm '>Role para ver detalhes</small>
-        <button>&#x21e9;</button>
+    <div class='w-full h-full bg-[#171717] mySlides fade rounded-xl'>
+      <div id='scroll-alert' class='absolute flex-col items-center hidden text-2xl text-white md:flex -right-16 -top-20 animate-bounce opacity-60'>
+        <small class='text-sm font-matterSemiBold'>Role para ver detalhes</small>
+        <button class="rotate-90">&#x2794;</button>
       </div>
-      <section id='scroll-projects' class='grid w-full h-full gap-1 overflow-y-scroll overflow-x-hidden pb-9 place-items-center rounded-l-2xl scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-brand'>
+      <section id='scroll-projects' class='grid w-full h-full gap-1 overflow-x-hidden overflow-y-scroll rounded-xl pb-9 place-items-center scrollbar-thin scrollbar-thumb-brand'>
         {project.images.map(image => (
           <img class={'select-none rounded-xl ' + image.extraStyles} src={image.src} alt={image.alt}>
         ))}
       </section>
-      <div class='absolute bottom-0 w-full py-1 text-xl text-center text-white font-matterSemiBold bg-black/50 backdrop-blur-sm rounded-bl-2xl'>
+      <div class='absolute bottom-0 w-full py-1 text-xl text-center text-black bg-white rounded-b-xl font-matterSemiBold backdrop-blur-sm'>
         {project.name}
         {project.link ? (
-          <a class='hidden absolute bottom-0 sm:flex items-center h-full gap-2 text-sm font-matterRegular right-5' href={project?.link}>
-            <img class='w-5 h-5 invert' src='icons/external-link.png' alt='icone de link externo'>
+          <a class='absolute bottom-0 items-center hidden h-full gap-2 text-sm sm:flex font-matterRegular right-5' href={project?.link}>
+            <img class='w-5 h-5' src='icons/externallink.svg' alt='icone de link externo'>
             Ver projeto
           </a>
         ): ''}
@@ -39,8 +39,8 @@ const { projects } = Astro.props;
     </div>
   ))}
 
-  <div class='w-full h-full bg-black mySlides fade rounded-l-2xl'>
-    <span class='absolute text-2xl text-center text-white top-1/2 left-10 font-matterSemiBold'>Em breve mais...</span>
+  <div class='w-full h-full bg-[#171717] mySlides fade rounded-xl'>
+    <span class='absolute text-xl text-center text-white top-1/2 left-10 font-matterSemiBold'>Em breve mais...</span>
   </div>
 
   <div class='text-2xl font-bold text-white select-none'>
@@ -52,7 +52,7 @@ const { projects } = Astro.props;
 <style>
   .fade {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
   }
 
   @keyframes fade {
