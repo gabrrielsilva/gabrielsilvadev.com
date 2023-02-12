@@ -3,7 +3,8 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				brand: '#c1bfbc'
+				brand: '#d8ed5b',
+				secondaryBrand: '#edeef0'
 			},
 			fontFamily: {
 				matterRegular: ['Matter Regular'],

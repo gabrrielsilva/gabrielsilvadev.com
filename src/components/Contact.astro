@@ -50,21 +50,21 @@ const contacts = [
 ]
 ---
 
-<div id="contact" class='relative flex justify-center w-full h-full px-3 bg-[#0b0b0f] md:h-screen xl:px-0'>
-  <div class='z-10 grid w-full gap-20 py-20 md:py-40 md:grid-cols-2 lg:px-0 max-w-7xl place-content-center place-items-center'>
+<div id="contact" class='relative flex justify-center w-full h-full px-3 bg-secondaryBrand md:h-screen xl:px-0'>
+  <div class='z-10 grid w-full gap-20 py-20 md:py-40 md:grid-cols-2 lg:px-0 max-w-6xl place-content-center place-items-center'>
     <section class='flex flex-col justify-between w-full h-full'>
-      <h1 class='mt-5 mb-20 text-4xl text-white md:mb-10 md:text-6xl font-matterHeavy'>Vamos conversar?</h1>
+      <h1 class='mt-5 mb-20 text-3xl text-black md:mb-10 md:text-5xl font-matterRegular whitespace-nowrap'>Vamos criar algo incrível?</h1>
       <div class='flex flex-col gap-3'>
         {contacts.map(contact => (
           <div class='flex items-center gap-3'>
             <a class='flex items-center gap-3 text-white w-max' href={contact.link}>
-              <img class='w-[1.8rem] h-[1.8rem] invert' src={contact.iconPath} alt={contact.iconDescription}>
-              <p class='cursor-pointer text-lg font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-500 hover:after:w-full'>{contact.contact}</p>
+              <img class='w-6 h-6' src={contact.iconPath} alt={contact.iconDescription}>
+              <p class='cursor-pointer text-black text-lg font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-500 hover:after:w-full'>{contact.contact}</p>
             </a>
-            <div class='transition duration-300 opacity-30 hover:opacity-100'>
+            <div class='transition duration-300 opacity-70 hover:opacity-100'>
               <Tooltip tooltipText='Copiar contato'>
                 <button id={contact.name} value={contact.contact}>
-                  <img class='w-6 h-6 -mb-1 invert' src='/icons/clipboard.svg' alt='copiar contato'>
+                  <img class='w-6 h-6 -mb-1' src='/icons/clipboard.svg' alt='copiar contato'>
                 </button>
               </Tooltip>
             </div>
@@ -73,13 +73,13 @@ const contacts = [
       </div>
     </section>
     <section class='grid w-full gap-10 place-items-start md:place-items-end'>
-      <div class='w-full p-2 overflow-hidden rounded-lg md:w-auto md:h-80 bg-white/20'>
-        <img class='object-contain w-full h-full rounded-md saturate-150' src='images/gabriel.jpg' alt=''>
+      <div class='w-full p-[0.15rem] overflow-hidden rounded-3xl md:w-auto md:h-80 bg-black'>
+        <img class='object-contain w-full h-full rounded-[1.3rem] saturate-150' src='images/gabriel.jpg' alt=''>
       </div>
-      <div class='text-white text-start md:text-end'>
+      <div class='text-black font-matterRegular text-start md:text-end'>
         <Brand />
-        <small class='text-gray-400'>Desenvolvedor full stack</small>
-        <div class='flex items-center justify-start gap-3 mt-3 -ml-1 md:justify-end invert'>
+        <small>Desenvolvedor full stack</small>
+        <div class='flex items-center justify-start gap-3 mt-3 -ml-1 md:justify-end'>
           {socialNetworks.map(socialNetwork => (
             <a href={socialNetwork.link}>
               <img class='w-[1.8rem] h-[1.8rem]' src={socialNetwork.iconPath} alt={socialNetwork.name}>
@@ -87,7 +87,7 @@ const contacts = [
           ))}
         </div>
       </div>
-      <small class='text-sm text-white/40 font-matterRegular'>&copy; {new Date().getFullYear()} Gabriel Silva. Todos os cafés reservados.</small>
+      <small class='text-sm text-black/60 font-matterRegular'>&copy; {new Date().getFullYear()} <span class="text-[#7b61ff]">Gabriel Silva</span>. Todos os cafés reservados.</small>
     </section>
   </div>
 </div>
