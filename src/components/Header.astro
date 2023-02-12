@@ -3,12 +3,15 @@ import Brand from './Brand.astro';
 import ContactButtonHeader from './ContactButtonHeader.astro';
 ---
 
-<header id='header' class='z-30 absolute top-3 md:top-10 flex justify-center w-full text-white col-span-full'>
-  <div class='flex items-center justify-between w-full h-20 px-3 max-w-6xl xl:px-0'>
-    <Brand />
-    <section class='flex items-center gap-10 text-[16px]'>
+<header id='header' class='absolute z-30 flex justify-center w-full text-white top-3 md:top-10 col-span-full'>
+  <div class='flex items-center justify-between w-full h-20 max-w-6xl px-3 xl:px-0'>
+    <div class="flex items-center gap-2 select-none">
+      <img src="icons/brand.svg" alt="" class="h-[2rem] w-[2rem]">
+      <Brand />
+    </div>
+    <section class='flex items-center gap-10 text-sm'>
       <button id="projects_button_header" class='hidden font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-300 hover:after:w-full'>Projetos</button>
-      <span class="font-thin text-white/20 hidden sm:block">|</span>
+      <span class="hidden font-thin select-none text-white/20 sm:block">|</span>
       <ContactButtonHeader />
     </section>
   </div>

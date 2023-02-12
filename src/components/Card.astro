@@ -9,7 +9,7 @@ export interface Props {
 const { title, icon, bgIcon, description } = Astro.props;
 ---
 
-<div class='flex flex-col h-full md:h-[20rem] lg:h-[17rem] xl:h-[19rem] bg-gradient-to-br from-transparent to-white/30 p-8 hover:bg-white transition duration-500 border border-black/10 rounded-3xl cursor-default max-h-max border-r-2 border-b-2 border-b-black border-r-black'>
+<div class='flex flex-col h-full md:h-[20rem] lg:h-[17rem] p-8 bg-white transition duration-500 border border-black/10 rounded-3xl cursor-default max-h-max border-r-2 border-b-2 border-b-black border-r-black'>
   <div class='relative first-letter:flex flex-col h-full gap-3'>
     <figure class={'absolute h-10 w-10 rounded-lg flex justify-center items-center ' + bgIcon}>
       <img src={icon} alt='' class='w-8 h-8' />
