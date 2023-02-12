@@ -1,0 +1,23 @@
+<div class='fixed z-50 flex flex-col items-end gap-2 md:gap-3 bottom-4 right-4 md:bottom-8 md:right-8'>
+  <div id="greeting" class="flex items-center gap-2">
+    <button id="close" class="text-[16px] h-8 w-8 md:w-10 md:h-10 md:text-lg bg-white rounded-full shadow-lg font-matterRegular">X</button>
+    <section class='px-2 py-1 bg-white rounded-full shadow-lg md:px-3 md:py-2'>
+      <span class='text-sm font-matterRegular'>Olá, posso te ajudar? 😁</span>
+    </section>
+  </div>
+  <a
+    href='https://wa.me/5515997485358'
+    class='flex items-center justify-center p-1 transition duration-300 bg-green-500 rounded-full w-11 h-11 md:p-3 hover:bg-green-600 md:w-14 md:h-14 font-matterSemiBold'
+  >
+    <img src='icons/whatsapp.svg' alt='' class='w-[1.9rem] h-[1.9rem] md:w-10 md:h-10 invert' />
+  </a>
+</div>
+
+<script>
+  const closeButton = document.getElementById('close') as HTMLButtonElement;
+  const greeting = document.getElementById('greeting') as HTMLElement;
+
+  closeButton.addEventListener('click', () => {
+    greeting.classList.add('hidden');
+  })
+</script>
