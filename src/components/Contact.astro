@@ -22,7 +22,7 @@ const socialNetworks = [
 
 const contacts = [
   {
-    name: 'mail',
+    name: 'email',
     iconPath: 'icons/mail.svg',
     iconDescription: 'envelope',
     contact: 'gabrielsilvaev@gmail.com',
@@ -70,7 +70,7 @@ const contacts = [
     </section>
     <section class='grid w-full grid-cols-2 gap-10 place-items-center md:place-items-end md:grid-cols-1'>
       <div class='w-full select-none rounded-3xl md:w-auto md:h-80'>
-        <img class='object-contain w-full h-full border-2 border-black saturate-150 rounded-3xl' src='images/gabriel.jpg' alt=''>
+        <img class='object-contain w-full h-full border-2 border-black rounded-3xl' src='images/gabriel.jpg' alt=''>
       </div>
       <div class='flex flex-col items-end justify-center h-full text-black font-matterRegular text-start md:text-end sm:items-start md:items-end'>
         <Brand />
@@ -78,23 +78,21 @@ const contacts = [
         <div class='flex items-center justify-start gap-3 mt-3 md:justify-end'>
           {socialNetworks.map(socialNetwork => (
             <a href={socialNetwork.link}>
-              <img class='w-6 h-6' src={socialNetwork.iconPath} alt={socialNetwork.name}>
+              <img class='w-6 h-6 saturate-0 brightness-0' src={socialNetwork.iconPath} alt={socialNetwork.name}>
             </a>
           ))}
         </div>
-        <small class='hidden w-full mt-5 text-sm md:block text-black/70 font-matterRegular'>&copy; {new Date().getFullYear()} <span class="text-purple-700 font-matterSemiBold">Gabriel Silva</span>. Todos os cafés reservados.</small>
+        <small class='hidden w-full mt-5 text-sm md:block text-black/70 font-matterRegular'>&copy; {new Date().getFullYear()} <span class="text-black font-matterSemiBold">Gabriel Silva</span>. Todos os cafés reservados.</small>
       </div>
     </section>
-    <small class='w-full text-sm md:hidden text-black/70 font-matterRegular'>&copy; {new Date().getFullYear()} <span class="text-purple-700 font-matterSemiBold">Gabriel Silva</span>. Todos os cafés reservados.</small>
+    <small class='w-full text-sm md:hidden text-black/70 font-matterRegular'>&copy; {new Date().getFullYear()} <span class="text-black font-matterSemiBold">Gabriel Silva</span>. Todos os cafés reservados.</small>
   </div>
 </div>
 
 <script>
-  const mailButton = document.getElementById('mail') as HTMLButtonElement;
-  const whatsappButton = document.getElementById('whatsapp') as HTMLButtonElement;
-  const telephoneButton = document.getElementById('telephone') as HTMLButtonElement;
+  const mailButton = document.getElementById('email') as HTMLButtonElement;
+  const telephoneButton = document.getElementById('telefone') as HTMLButtonElement;
 
   mailButton.addEventListener('click', () => navigator.clipboard.writeText(mailButton.value));
-  whatsappButton.addEventListener('click', () => navigator.clipboard.writeText(whatsappButton.value));
   telephoneButton.addEventListener('click', () => navigator.clipboard.writeText(telephoneButton.value));
 </script>
