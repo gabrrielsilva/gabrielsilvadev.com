@@ -1,69 +1,77 @@
 ---
-import Card from './Card.astro';
-import Quote from './Quote.astro';
+import H1 from './typography/H1.astro';
 
 const services = [
   {
     icon: 'icons/ecommerce.svg',
-    name: 'Ecommerce',
-    description: 'Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Eu posso construir um ecommerce e te ensinar a gerenciar preços e o estoque, e acompanhar as vendas.',
-    bgIcon: 'bg-[#4cd0e6]/50'
+    name: 'Lojas virtuais',
+    description: 'Você tem milhares de clientes em potencial, que estão se sentindo muito à vontade para gastar dinheiro online e só precisam de um pouco de motivação para gastá-lo com você. Usando as melhores tecnologias do mercado, construimos e-commerces escaláveis e sob medida, com dados em tempo real e um sistema de gerenciamento de pedidos.',
+    image: 'images/ecommerce.png'
   },
   {
     icon: '/icons/landingpage.svg',
-    name: 'Landing Page',
+    name: 'Landing Pages',
     description: 'Desenvolvidas estratégicamente para aumentar as taxas de conversão e alavancar seu negócio. Despertam a curiosidade, criam interesse e provocam desejo no público alvo, de modo que ele faça um pedido de orçamento ou de acesso à algum conteúdo. Isso agrega valor e gera leads, que posteriormente se tornarão bons clientes.',
-    bgIcon: 'bg-[#ffef1d]/50'
-  },
-  {
-    icon: '/icons/blog.svg',
-    name: 'Blog',
-    description: 'Posso construir um blog com design diferenciado e único, para que você publique seus conteúdos e ganhe engajamento com seu público. Meu objetivo é garantir que as pessoas invistam em sua marca, de modo que se envolvam com você e gastem dinheiro quando lançar novos conteúdos.',
-    bgIcon: 'bg-[#ff981d]/70'
+    image: 'images/landingpage.png'
   },
   {
     icon: '/icons/website.svg',
-    name: 'Site',
+    name: 'Websites',
     description: 'Essencial para a presença online de qualquer negócio, crucial para gerar resultados. Quebre todas as barreiras geográficas e mostre quem você é e o que você faz. É o centralizador das estratégias de comunicação e quem vai construir sua imagem e credibilidade.',
-    bgIcon: 'bg-[#ff546b]/60'
+    image: 'images/website.png'
   },
   {
     icon: '/icons/desktop.svg',
-    name: 'Programa Desktop',
-    description: 'Com um clique em um arquivo executável seu problema é resolvido, este é muito poderoso porque oferece mais controle e estabilidade do que aplicações web ou mobiles. Geralmente usados para automatizar processos de manipulação de arquivos, economizando várias horas do seu tempo.',
-    bgIcon: 'bg-[#1ed05f]/50'
+    name: 'Desktop',
+    description: 'Geralmente usados para automatizar processos de manipulação de arquivos e manter aplicações independentes da internet, pois mantém setores em funcionamento mesmo com problemas de rede, usam recursos do sistema operacional e suportam grandes entradas de dados, possibilitando automações incríveis.',
+    image: 'images/desktop.png'
   },
   {
     icon: '/icons/mobile.svg',
-    name: 'Aplicativo Mobile',
-    description: 'Aproxima e fideliza clientes, de modo que a empresa se mostre presente no dia a dia do consumidor. Um aplicativo mobile também otimiza processos e aprimora o atendimento e experiência do usuário. Posso fortalecer sua marca construindo um app multiplataforma, que rode no Android e IOS.',
-    bgIcon: 'bg-[#806bf6]/50'
+    name: 'Apps',
+    description: 'Aproxima e fideliza clientes, aprimora o atendimento e experiência do usuário. Fortalecemos sua marca construindo um app multiplataforma, que rode no Android e IOS, e que use todos os recursos do seu aparelho, como câmera, geolocalização e notificações push. Fazemos isso usando React Native, tecnologia do Facebook, usada também por empresas como Tesla, Airbnb, Uber e Microsoft.',
+    image: 'images/app.png'
   },
 ];
 ---
 
-<div id="services" class='relative flex flex-col items-center w-full h-full px-3 bg-secondaryBrand'>
-  <div class='z-10 flex flex-col w-full max-w-6xl gap-20 pt-20 md:pt-32'>
+<div id="services" class='relative flex flex-col items-center w-full h-full px-3 overflow-hidden bg-black'>
+  <img src="icons/circles2.svg" alt="" class="animate-pulse hidden h-[30rem] w-[30rem] absolute -left-60 top-[40%] -translate-y-1/2 md:block">
+  <img src="icons/circles1.svg" alt="" class="animate-spin-slow hidden h-[30rem] w-[30rem] absolute -right-20 bottom-60 md:block">
+
+  <div class='z-10 flex flex-col w-full max-w-6xl gap-20 py-20 md:py-28'>
     <header class="flex flex-col gap-5">
-      <h1 class='flex-initial text-3xl text-black sm:text-5xl font-matterRegular'>
-        O que vamos construir juntos?
-      </h1>
-      <h2 class="text-[16px] font-matterRegular md:text-xl text-neutral-700">
-        Se você tem problemas de organização, tempo, comunicação, padronização, ou quer ganhar mais dinheiro, está no lugar certo.
+      <H1 text="Como podemos ajudar?" extraStyles="flex-initial text-white" />
+      <h2 class="text-lg text-white sm:text-xl font-helveticaNowText">
+        Criamos soluções que simplificam os requisitos, aumentam a produtividade, reduzem os prazos e padronizam processos.
       </h2>
     </header>
-    <section class='grid flex-auto gap-10 md:grid-cols-2'>
-      {
-        services.map((service) => (
-          <Card
-            icon={service.icon}
-            bgIcon={service.bgIcon}
-            title={service.name}
-            description={service.description}
-          />
-        ))
-      }
+    <section class='relative flex flex-col flex-auto gap-10 lg:gap-32'>
+      {services.map((service, i) => (
+        <>
+          <div class="items-center hidden w-full gap-20 text-white lg:flex">
+            {i % 2 === 0 && <img class="object-cover object-top w-1/2 h-96 rounded-2xl" src={service.image} alt="" />}
+            <section class="flex flex-col w-1/2 gap-6">
+              <figure class={'absolute h-10 w-10 rounded-lg flex justify-center items-center bg-brand'}>
+                <img src={service.icon} alt={service.name} class='w-8 h-8' />
+              </figure>
+              <h3 class="mt-16 text-4xl font-matterSemiBold">{service.name}</h3>
+              <p class="text-lg font-helveticaNowText">{service.description}</p>
+            </section>
+            {i % 2 !== 0 && <img class="object-cover object-top w-1/2 border-2 border-black h-96 rounded-2xl" src={service.image} alt="" />}
+          </div>
+
+          <div class="flex flex-col lg:hidden">
+            <img class="object-cover object-top w-full h-64 border-b-4 border-black rounded-t-2xl" src={service.image} alt="" />
+            <div class="grid grid-cols-[1fr_20%]">
+              <div class="p-4 text-white bg-zinc-800 rounded-bl-2xl font-helveticaNowText">{service.description}</div>
+              <div class="flex items-center justify-center w-full h-full border-l-4 border-black bg-brand rounded-br-2xl">
+                <p class="text-black [writing-mode:vertical-lr] text-4xl font-matterSemiBold">{service.name}</p>
+              </div>
+            </div>
+          </div>
+        </>
+      ))}
     </section>
   </div>
-  <Quote />
 </div>

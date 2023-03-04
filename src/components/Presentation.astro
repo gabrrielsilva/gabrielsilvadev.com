@@ -1,25 +1,24 @@
 ---
+import Button from "./Button.astro";
+import H1 from './typography/H1.astro';
 ---
 <div
   id="presentation"
   class='grid w-full max-w-6xl min-h-screen h-full px-3 gap-14 sm:gap-10 pt-[8rem] md:pt-0 md:min-h-0 md:h-[45rem] md:grid-cols-2 xl:p-0 mb-10 md:mb-0'
 >
-  <section class='flex flex-col justify-center items-center text-center md:text-left md:items-start gap-3'>
-    <small class='text-sm md:text-[16px] uppercase text-white/20 font-matterSemiBold whitespace-nowrap'>Desenvolvedor Full Stack</small>
-    <h1 class='text-3xl md:text-5xl text-white font-matterSemiBold leading-tighter'>Resolvo seus problemas usando a tecnologia.</h1>
-    <div class='flex items-center gap-3 mt-5'>
-      <button id="contact_button_presentation" class='w-32 lg:w-auto px-4 py-[0.35rem] lg:py-4 text-sm lg:text-[16px] font-matterRegular leading-4 duration-500 bg-brand rounded-full hover:bg-brand/70'>
-        Entrar em contato
-      </button>
-      <button id="projects_button_presentation" class='w-32 lg:w-auto px-4 py-3 lg:py-3.5 text-sm lg:text-[16px] font-matterRegular leading-4 text-brand duration-500 bg-transparent border-2 border-brand rounded-full hover:bg-white/80 hover:border-white/10 hover:text-black'>
-        Ver projetos
-      </button>
+  <div class="blur-[50px] absolute -top-20 -right-40 h-96 w-80 rounded-full lg:h-[30rem] lg:w-[50rem] bg-brand/80 lg:blur-[120px] lg:right-40 lg:-top-40"></div>
+  <div class="blur-[50px] absolute top-10 -right-60 h-96 w-80 rounded-full lg:h-[30rem] lg:w-[35rem] bg-[#fff059] lg:blur-[120px] lg:right-20 lg:-top-28"></div>
+  
+  <section class='z-20 flex flex-col items-center justify-center gap-3 text-center md:text-left md:items-start'>
+    <small class='text-lg select-none text-black/80 font-helveticaNowText whitespace-nowrap'>Desenvolvimento de software</small>
+    <H1 text="Simplificamos sua vida com tecnologia" extraStyles="text-black leading-tighter" />
+    <div class='flex items-center gap-3 mt-5 select-none'>
+      <Button id='contact_button_presentation' text="Entrar em contato" arrow={true} extraStyles="bg-brand duration-200 hover:bg-white hover:text-black hover:invert" />
+      <Button id='projects_button_presentation' text="Ver projetos" arrow={true} extraStyles="bg-transparent duration-200 py-2.5 whitespace-nowrap lg:py-3.5 border-2 border-black hover:bg-black/10" />
     </div>
   </section>
-  <section class='relative flex items-center justify-center md:justify-end select-none'>
-    <img class='macbook w-full select-none' src='/images/macbook/macbook.jfif' alt='' />
-    <img src="images/macbook/key-lights.svg" alt="" class="absolute">
-    <img src="images/macbook/screen.png" alt="" class="screen absolute">
+  <section class='relative flex items-center justify-center select-none md:justify-end'>
+    <img src="images/notebookmockup.png" alt="" class="lg:absolute lg:top-24 lg:-right-5">
   </section>
 </div>
 

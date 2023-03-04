@@ -1,0 +1,13 @@
+<svg id="orna--circulo-cases" viewBox="0 0 509 301" fill="none" xmlns="http://www.w3.org/2000/svg" class="" contenteditable="false">
+  <g clip-path="url(#clip0_1284_9726)">
+    <path class="js-animate animou" data-animate="animate-right" data-duration="1.2" data-delay="600" d="M230.134 188.988C208.731 109.11 256.134 27.0054 336.012 5.60211C415.89 -15.8011 497.995 31.602 519.398 111.48C540.801 191.358 493.398 273.463 413.52 294.866C333.642 316.269 251.537 268.866 230.134 188.988Z" stroke="#06F784" stroke-opacity="0.11" style="opacity: 1; visibility: inherit; transform-origin: 0px 0px;" data-svg-origin="224.994873046875 0.46289730072021484" transform="matrix(1,0,0,1,0,0)"></path>
+    <path class="js-animate animou" data-animate="animate-right" data-duration="1.2" data-delay="500" d="M303.41 299.968C220.714 299.968 153.676 232.93 153.676 150.234C153.676 67.5382 220.714 0.5 303.41 0.5C386.106 0.5 453.144 67.5382 453.144 150.234C453.144 232.93 386.106 299.968 303.41 299.968Z" stroke="#06F784" stroke-opacity="0.34" style="opacity: 1; visibility: inherit; transform-origin: 0px 0px;" data-svg-origin="153.67599487304688 0.5" transform="matrix(1,0,0,1,0,0)"></path>
+    <path class="js-animate animou" data-animate="animate-right" data-duration="1.2" data-delay="400" d="M229.441 299.968C146.745 299.968 79.707 232.93 79.707 150.234C79.707 67.5382 146.745 0.5 229.441 0.5C312.137 0.5 379.175 67.5382 379.175 150.234C379.175 232.93 312.137 299.968 229.441 299.968Z" stroke="#06F784" stroke-opacity="0.66" style="opacity: 1; visibility: inherit; transform-origin: 0px 0px;" data-svg-origin="79.70700073242188 0.5" transform="matrix(1,0,0,1,0,0)"></path>
+    <path class="js-animate animou" data-animate="animate-right" data-duration="1.2" data-delay="300" d="M150.234 299.968C67.5382 299.968 0.5 232.93 0.5 150.234C0.5 67.5382 67.5382 0.5 150.234 0.5C232.93 0.5 299.968 67.5382 299.968 150.234C299.968 232.93 232.93 299.968 150.234 299.968Z" stroke="#06F784" style="opacity: 1; visibility: inherit; transform-origin: 0px 0px;" data-svg-origin="0.5 0.5" transform="matrix(1,0,0,1,0,0)"></path>
+  </g>
+  <defs>
+    <clipPath id="clip0_1284_9726">
+      <rect width="509" height="301" fill="white"></rect>
+    </clipPath>
+  </defs>
+</svg>

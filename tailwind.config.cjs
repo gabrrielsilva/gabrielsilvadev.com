@@ -3,14 +3,18 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				brand: '#d8ed5b',
-				secondaryBrand: '#edeef0'
+				brand: '#06f784',
+				secondaryBrand: '#fcfbf8'
 			},
 			fontFamily: {
 				matterRegular: ['Matter Regular'],
 				matterSemiBold: ['Matter SemiBold'],
-				matterHeavy: ['Matter Heavy']
+				matterHeavy: ['Matter Heavy'],
+				helveticaNowText: ['Helvetica Now Text']
 			},
+			animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
 		},
 	},
 	plugins: [require('tailwind-scrollbar')],

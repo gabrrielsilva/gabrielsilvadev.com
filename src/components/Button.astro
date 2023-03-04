@@ -1,0 +1,15 @@
+---
+export interface Props {
+  id: string,
+  text: string,
+  extraStyles: string,
+  arrow?: boolean,
+}
+
+const { id, text, extraStyles, arrow } = Astro.props;
+---
+
+<button id={id} class={"flex items-center gap-3 w-36 lg:w-auto px-4 py-[0.35rem] lg:py-4 text-sm lg:text-[16px] font-matterRegular leading-4 duration-500 rounded-full " + extraStyles}>
+  {text}
+  {arrow && <img src="icons/black-arrow-icon.svg" alt="">}
+</button>

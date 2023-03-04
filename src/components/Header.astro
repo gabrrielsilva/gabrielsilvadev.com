@@ -1,23 +1,32 @@
 ---
 import Brand from './Brand.astro';
-import ContactButtonHeader from './ContactButtonHeader.astro';
+import Button from './Button.astro';
 ---
 
-<header id='header' class='absolute z-30 flex justify-center w-full text-white top-3 md:top-10 col-span-full'>
+<header id='header' class='absolute z-30 flex justify-center w-full text-black top-3 col-span-full'>
   <div class='flex items-center justify-between w-full h-20 max-w-6xl px-3 xl:px-0'>
-    <div class="flex items-center gap-2 select-none">
-      <img src="icons/brand.svg" alt="" class="h-[2rem] w-[2rem]">
+    <div class="flex items-center gap-1 select-none">
+      <!-- <img src="icons/brand.svg" alt="" class="h-[2rem] w-[2rem]"> -->
       <Brand />
     </div>
-    <section class='flex items-center gap-10 text-sm'>
-      <button id="projects_button_header" class='hidden font-matterSemiBold sm:inline-block after:block after:w-0 after:h-[2px] after:bg-white after:transition-[width] after:duration-300 hover:after:w-full'>Projetos</button>
-      <span class="hidden font-thin select-none text-white/20 sm:block">|</span>
-      <ContactButtonHeader />
+    <section class='flex items-center gap-10 text-[16px]'>
+      <Button id='projects_button_header' text="Projetos" extraStyles="hidden leading-6 p-0 w-auto text-black sm:inline-block after:block after:w-0 after:h-[2px] after:bg-black after:transition-[width] after:duration-300 hover:after:w-full" />
+      <Button id='contact_button_header' text="Entrar em contato" arrow={true} extraStyles="hidden sm:flex py-1 bg-transparent duration-200 lg:py-2.5 border-2 border-black hover:bg-white" />
     </section>
   </div>
 </header>
 
 <script>
+	import confetti from 'canvas-confetti';
+
+	const button = document.getElementById('contact_button_header') as HTMLElement;
   const projectsButton = document.getElementById('projects_button_header') as HTMLButtonElement;
+  
+	if (button) {
+    button.addEventListener('click', () => {
+      (document.getElementById('contact') as HTMLDivElement).scrollIntoView();
+			setTimeout(() => confetti({ gravity: 0.5 }), 800);
+		});
+	}
   projectsButton.addEventListener('click', () => (document.getElementById('projects') as HTMLDivElement).scrollIntoView());
 </script>

@@ -1,0 +1,21 @@
+<svg id="orna_varios_circulos" viewBox="0 0 771 771" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group 171">
+    <mask id="mask0_706_7273" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="771" height="771">
+      <path d="M485.235 757.749C279.641 812.838 68.3163 690.829 13.2276 485.235C-41.8611 279.641 80.1474 68.3162 285.741 13.2275C491.335 -41.8613 702.66 80.1473 757.749 285.741C812.838 491.335 690.829 702.66 485.235 757.749Z" fill="black"></path>
+    </mask>
+    <g mask="url(#mask0_706_7273)">
+      <g>
+        <g>
+          <circle id="circulo_7" cx="385" cy="385.977" r="382.895" stroke="#06F784" stroke-width="5.20946"></circle>
+          <circle id="circulo_6" cx="384.998" cy="385.979" r="333.926" stroke="#06F784" stroke-opacity="0.85" stroke-width="4.16757"></circle>
+          <circle id="circulo_5" cx="386.001" cy="385.974" r="282.092" stroke="#06F784" stroke-opacity="0.65" stroke-width="3.64662"></circle>
+          <circle id="circulo_4" cx="385.001" cy="385.973" r="230.258" stroke="#06F784" stroke-opacity="0.5" stroke-width="3.12568"></circle>
+          <circle id="circulo_3" cx="385" cy="385.976" r="178.424" stroke="#06F784" stroke-opacity="0.35" stroke-width="2.60473"></circle>
+          <circle id="circulo_2" cx="384.998" cy="385.979" r="129.064" stroke="#06F784" stroke-opacity="0.2" stroke-width="2.34426"></circle>
+          <circle id="circulo_1" cx="385.001" cy="385.973" r="79.7047" stroke="#06F784" stroke-opacity="0.1" stroke-width="2.08378"></circle>
+          <circle id="circulo_0" cx="385.001" cy="385.978" r="35.815" stroke="#06F784" stroke-opacity="0.05" stroke-width="1.30236"></circle>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
