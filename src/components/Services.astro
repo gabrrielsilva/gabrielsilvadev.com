@@ -41,13 +41,13 @@ const services = [
 ];
 ---
 
-<div id="services" class='relative flex flex-col items-center w-full h-full px-3 overflow-hidden bg-secondaryBrand'>
+<div id="services" class='relative flex flex-col items-center w-full h-full px-3 overflow-hidden bg-black sm:bg-secondaryBrand'>
   <img src="icons/circles2.svg" alt="" class="animate-pulse hidden h-[30rem] w-[30rem] absolute -left-60 top-[40%] -translate-y-1/2 md:block">
   <img src="icons/circles1.svg" alt="" class="animate-spin-slow hidden h-[30rem] w-[30rem] absolute -right-20 bottom-60 md:block">
 
   <div class='z-10 flex flex-col w-full max-w-6xl gap-20 py-20 md:py-28 border-t-2 border-t-black/20'>
     <header class="flex flex-col gap-5">
-      <H1 text="Como podemos ajudar?" extraStyles="flex-initial text-black" />
+      <H1 text="Como podemos ajudar?" extraStyles="flex-initial text-white sm:text-black" />
       <!-- <h2 class="text-[1.08rem] text-black sm:text-xl font-helveticaNowText">
         Criamos soluções que simplificam os requisitos, aumentam a produtividade, reduzem os prazos e padronizam processos.
       </h2> -->
@@ -68,9 +68,9 @@ const services = [
           </div>
 
           <div class="flex flex-col lg:hidden">
-            <h3 class="font-helveticaNowText text-2xl my-2 bg-brand w-min whitespace-nowrap">{service.name}</h3>
-            <img class="object-cover object-top w-full h-60 rounded border border-black" src={service.image} alt="" />
-            <div class="text-black rounded-bl-2xl font-helveticaNowText my-2">{service.description}</div>
+            <h3 class="font-matterSemiBold text-2xl my-2 w-min whitespace-nowrap text-white"><span class="text-brand mr-2">|</span>{service.name}</h3>
+            <img class="object-cover object-top w-full h-60 rounded border-b border-r border-brand" src={service.image} alt="" />
+            <div class="rounded-bl-2xl font-helveticaNowText my-2 text-zinc-300">{service.description}</div>
           </div>
         </>
       ))}

@@ -12,7 +12,7 @@ const carousel = Array(5).fill(logos).flat() as string[];
   <div class="blur-[70px] absolute -top-20 -left-20 sm:left-auto h-96 w-80 rounded-full sm:h-[40rem] sm:w-[60rem] bg-brand/80 sm:blur-[120px] sm:right-40 sm:-top-48"></div>
   <div class="blur-[80px] absolute -top-20 -right-20 h-[30rem] w-80 rounded-full sm:h-[40rem] sm:w-[40rem] bg-tertiaryBrand/80 sm:blur-[120px] sm:-right-20 sm:top-18"></div>
   
-  <section class='z-20 flex flex-col items-start justify-start gap-3 text-left'>
+  <section class='z-20 flex flex-col items-start sm:justify-center justify-start gap-3 text-left'>
     <!-- <small class='text-[1rem] sm:text-xl select-none text-black font-helveticaNowText whitespace-nowrap'>Desenvolvimento de software</small> -->
     <H1 text="Simplificamos sua vida com tecnologia" extraStyles="text-black leading-tighter" />
     <h2 class="text-lg text-black sm:text-xl font-helveticaNowText">
@@ -24,7 +24,7 @@ const carousel = Array(5).fill(logos).flat() as string[];
     </div>
   </section>
   <section class='relative flex items-start justify-center select-none md:justify-end overflow-hidden sm:overflow-visible'>
-    <img src="images/notebookmockup.png" alt="" class="hidden md:block lg:absolute lg:top-24 lg:-right-5 animate-bounce-slow">
+    <img src="images/notebookmockup.png" alt="" class="hidden md:block md:mt-40 lg:mt-0 lg:absolute lg:top-24 lg:-right-5 animate-bounce-slow">
     <div class="flex flex-col w-full h-20 mb-20 sm:hidden">
       <h3 class="text-[1rem] text-black md:text-3xl font-helveticaNowText -mb-5">Empresas beneficiadas por nossas soluções</h3>
       <div class="flex animate-scroll w-[calc(250px*14)]">
