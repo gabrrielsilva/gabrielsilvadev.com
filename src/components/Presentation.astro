@@ -10,13 +10,13 @@ const carousel = Array(5).fill(logos).flat() as string[];
   class='grid w-full max-w-6xl min-h-screen h-screen sm:h-full px-3 gap-14 sm:gap-10 pt-[8rem] md:pt-0 md:min-h-0 md:h-[45rem] md:grid-cols-2 xl:p-0 mb-10 md:mb-0'
 >
   <div class="blur-[70px] absolute -top-20 -left-20 sm:left-auto h-96 w-80 rounded-full sm:h-[40rem] sm:w-[60rem] bg-brand/80 sm:blur-[120px] sm:right-40 sm:-top-48"></div>
-  <div class="blur-[80px] absolute -top-20 -right-20 h-[30rem] w-80 rounded-full sm:h-[40rem] sm:w-[40rem] bg-tertiaryBrand sm:blur-[120px] sm:-right-20 sm:top-18"></div>
+  <div class="blur-[80px] absolute -top-20 -right-20 h-[30rem] w-80 rounded-full sm:h-[40rem] sm:w-[40rem] bg-tertiaryBrand/80 sm:blur-[120px] sm:-right-20 sm:top-18"></div>
   
   <section class='z-20 flex flex-col items-start justify-start gap-3 text-left'>
     <!-- <small class='text-[1rem] sm:text-xl select-none text-black font-helveticaNowText whitespace-nowrap'>Desenvolvimento de software</small> -->
     <H1 text="Simplificamos sua vida com tecnologia" extraStyles="text-black leading-tighter" />
     <h2 class="text-lg text-black sm:text-xl font-helveticaNowText">
-      Desenvolvemos soluções de software que simplificam os requisitos, aumentam a produtividade, reduzem os prazos e padronizam processos.
+      Desenvolvemos soluções de software que aumentam a produtividade, reduzem os prazos e padronizam processos.
     </h2>
     <div class='flex items-center gap-3 mt-5 select-none'>
       <Button id='contact_button_presentation' text="Entrar em contato" arrow={true} extraStyles="bg-brand duration-200 hover:bg-white hover:text-black hover:invert" />
@@ -25,12 +25,12 @@ const carousel = Array(5).fill(logos).flat() as string[];
   </section>
   <section class='relative flex items-start justify-center select-none md:justify-end overflow-hidden sm:overflow-visible'>
     <img src="images/notebookmockup.png" alt="" class="hidden md:block lg:absolute lg:top-24 lg:-right-5 animate-bounce-slow">
-    <div class="flex flex-col w-full h-20 mb-16 sm:hidden">
-      <h3 class="text-[1rem] text-black md:text-3xl font-helveticaNowText">Empresas beneficiadas por nossas soluções</h3>
+    <div class="flex flex-col w-full h-20 mb-20 sm:hidden">
+      <h3 class="text-[1rem] text-black md:text-3xl font-helveticaNowText -mb-5">Empresas beneficiadas por nossas soluções</h3>
       <div class="flex animate-scroll w-[calc(250px*14)]">
         {carousel.map((logo, i) => (
           <div class="flex justify-center items-center h-[100px] w-[150px]">
-            <img src={logo} alt="" class="h-20 w-min grayscale opacity-90 brightness-150" />
+            <img src={logo} alt="" class="w-20 grayscale brightness-150" />
           </div>
         ))}
       </div>
