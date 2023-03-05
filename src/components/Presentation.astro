@@ -1,6 +1,9 @@
 ---
 import Button from "./Button.astro";
 import H1 from './typography/H1.astro';
+
+const logos = ['icons/tobrasil.png', 'icons/infinitel.png', 'icons/tim.svg'];
+const carousel = Array(5).fill(logos).flat() as string[];
 ---
 <div
   id="presentation"
@@ -10,15 +13,32 @@ import H1 from './typography/H1.astro';
   <div class="blur-[80px] absolute -top-20 -right-20 h-[30rem] w-80 rounded-full sm:h-[40rem] sm:w-[40rem] bg-[#fff059] sm:blur-[120px] sm:-right-20 sm:top-18"></div>
   
   <section class='z-20 flex flex-col items-start justify-center gap-3 text-left'>
-    <small class='text-lg select-none text-black/80 font-helveticaNowText whitespace-nowrap'>Desenvolvimento de software</small>
+    <small class='text-[1rem] select-none text-black font-helveticaNowText whitespace-nowrap'>Desenvolvimento de software</small>
     <H1 text="Simplificamos sua vida com tecnologia" extraStyles="text-black leading-tighter" />
     <div class='flex items-center gap-3 mt-5 select-none'>
       <Button id='contact_button_presentation' text="Entrar em contato" arrow={true} extraStyles="bg-brand duration-200 hover:bg-white hover:text-black hover:invert" />
       <Button id='projects_button_presentation' text="Ver projetos" arrow={true} extraStyles="bg-transparent duration-200 py-2.5 whitespace-nowrap lg:py-3.5 border-2 border-black hover:bg-black/10" />
     </div>
   </section>
-  <section class='relative flex items-center justify-center select-none md:justify-end'>
+  <section class='relative flex items-center justify-center select-none md:justify-end overflow-hidden'>
     <img src="images/notebookmockup.png" alt="" class="hidden md:block lg:absolute lg:top-24 lg:-right-5">
+    <div class="flex flex-col w-full h-20 mb-24 sm:hidden">
+      <h3 class="text-[1rem] text-black md:text-3xl font-helveticaNowText">Empresas beneficiadas por nossas soluções</h3>
+      <!-- <section class="flex items-center justify-between">
+        <img src="icons/tobrasil.png" alt="" class="w-20 -ml-1 transition duration-500 md:w-32 hover:grayscale-0 grayscale hover:brightness-100 brightness-150 opacity-90">
+        <img src="icons/infinitel.png" alt="" class="w-[4.7rem] transition duration-500 md:w-28 hover:grayscale-0 grayscale hover:brightness-100 brightness-150 opacity-90">
+        <img src="icons/tim.svg" alt="" class="w-24 transition duration-500 md:w-36 hover:grayscale-0 grayscale hover:brightness-100 brightness-200 opacity-95">
+      </section> -->
+      <div class="slider">
+        <div class="slide-track">
+          {carousel.map((logo, i) => (
+            <div class="flex justify-center items-center h-[100px] w-[150px]">
+              <img src={logo} alt="" class="h-20 w-min" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   </section>
 </div>
 
@@ -27,10 +47,26 @@ import H1 from './typography/H1.astro';
 
 	const contactButton = document.getElementById('contact_button_presentation') as HTMLElement;
   const projectsButton = document.getElementById('projects_button_presentation') as HTMLButtonElement;
-  
+
   contactButton.addEventListener('click', () => {
     (document.getElementById('contact') as HTMLDivElement).scrollIntoView();
     setTimeout(() => confetti({ gravity: 0.5 }), 800);
   });
   projectsButton.addEventListener('click', () => (document.getElementById('projects') as HTMLDivElement).scrollIntoView());
 </script>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 7));
+    }
+  }
+  .slider .slide-track {
+    animation: scroll 20s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+  }
+</style>
