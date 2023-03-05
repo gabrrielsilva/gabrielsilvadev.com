@@ -15,7 +15,7 @@ module.exports = {
 			},
 			animation: {
         'spin-slow': 'spin 3s linear infinite',
-				'scroll': 'scroll 20s linear infinite',
+				'scroll': 'scroll 30s linear infinite',
 				'bounce-slow': 'bounce 3s infinite'
       },
 			keyframes: {
