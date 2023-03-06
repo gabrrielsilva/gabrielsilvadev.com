@@ -1,4 +1,5 @@
 ---
+import Button from './Button.astro';
 import H1 from './typography/H1.astro';
 
 const services = [
@@ -27,16 +28,16 @@ const services = [
     image: 'images/website.png'
   },
   {
-    icon: '/icons/desktop.svg',
-    name: 'Desktop',
-    description: 'Geralmente usados para automatizar processos de manipulação de arquivos e manter aplicações independentes da internet, pois mantém setores em funcionamento mesmo com problemas de rede, usam recursos do sistema operacional e suportam grandes entradas de dados, possibilitando automações incríveis.',
-    image: 'images/desktop.png'
-  },
-  {
     icon: '/icons/mobile.svg',
     name: 'Apps',
     description: 'Aprimora o atendimento e experiência do usuário. Fortalecemos sua marca construindo um app multiplataforma, que rode no Android e IOS, e que use todos os recursos do seu aparelho, como câmera, geolocalização e notificações push. Fazemos isso usando React Native, tecnologia do Facebook, usada também por empresas como Tesla, Airbnb, Uber e Microsoft.',
     image: 'images/app.png'
+  },
+  {
+    icon: '/icons/desktop.svg',
+    name: 'Desktop',
+    description: 'Geralmente usados para automatizar processos de manipulação de arquivos e manter aplicações independentes da internet, pois mantém setores em funcionamento mesmo com problemas de rede, usam recursos do sistema operacional e suportam grandes entradas de dados, possibilitando automações incríveis.',
+    image: 'images/desktop.png'
   },
 ];
 ---
@@ -48,6 +49,11 @@ const services = [
   <div class='z-10 flex flex-col w-full max-w-6xl gap-20 py-20 md:py-28 border-t-2 border-t-black/20'>
     <header class="flex flex-col gap-5">
       <H1 text="Como podemos ajudar?" extraStyles="flex-initial text-white sm:text-black" />
+      <section class="flex items-center flex-wrap gap-3 mt-10">
+        {services.map(service => (
+          <Button text={service.name} Icon={service.icon} extraStyles="h-[2.75rem] bg-brand duration-200 gap-2 hover:bg-white hover:text-black hover:invert hover:border-2 hover:border-black" />
+        ))}
+      </section>
       <!-- <h2 class="text-[1.08rem] text-black sm:text-xl font-helveticaNowText">
         Criamos soluções que simplificam os requisitos, aumentam a produtividade, reduzem os prazos e padronizam processos.
       </h2> -->
