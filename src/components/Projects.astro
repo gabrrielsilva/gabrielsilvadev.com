@@ -1,10 +1,14 @@
 ---
 import Carousel from "./Carousel.astro";
+import H1 from "./typography/H1.astro";
 ---
 
-<div id='projects' class='flex md:items-center justify-center w-full h-full min-h-screen bg-[#0b0b0f] px-3 xl:px-0'>
-  <div class='flex flex-col w-full h-auto max-w-6xl gap-10'>
-    <h1 class='w-full mt-20 text-3xl text-white md:mt-40 md:text-5xl font-matterSemiBold'>Projetos</h1>
+<div id='projects' class='relative flex justify-center w-full h-full min-h-screen px-3 md:items-center xl:px-0'>
+  <div class="hidden lg:block z-0 absolute -top-40 -left-[30rem] h-[50rem] w-[50rem] bg-gradient-to-br from-brand/80 to-tertiaryBrand/80 blur-[80px] animate-spin-slow rounded-full" />
+
+  <div class='z-10 flex flex-col w-full h-auto max-w-6xl gap-5 mt-20 sm:mt-0 md:gap-10'>
+    <H1 text="Projetos" extraStyles="text-black" />
+    <span class="text-[1rem] lg:text-2xl font-helveticaNowText">Já resolvemos problemas de organização, tempo, comunicação e padronização.</span>
     <section class="w-full h-[60vh] rounded-xl p-[0.1rem] pr-0 bg-white/10">
       <Carousel 
         projects={[
