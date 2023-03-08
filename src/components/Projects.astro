@@ -1,45 +1,44 @@
 ---
 import Carousel from "./Carousel.astro";
 import H1 from "./typography/H1.astro";
+
+const projects = [
+  {
+    name: 'Infinitel', 
+    description: 'Nesse Hub a equipe Infinitel junto dos seus parceiros TO Brasil, podem fazer a gestão e monitoramento de projetos de telecomunicações. Desenvolvemos a interface totalmente personalizada, de modo que o usuário tenha uma boa experiência.',
+    images: [
+      { src: 'images/infinitel/edit-project.png', alt: 'edição de projeto no sistema infinitel' },
+      { src: 'images/infinitel/base.png', alt: 'tabela de projetos no sistema infinitel' },
+      { src: 'images/infinitel/calendar.png', alt: 'calendário no sistema infinitel' },
+      { src: 'images/infinitel/dashboard.png', alt: 'dashboard no sistema infinitel' },
+      { src: 'images/infinitel/home.png', alt: 'inicio do site infinitel' },
+    ]
+  },
+  { 
+    name: 'Pholeport',
+    description: 'Mudou a forma com que a TIM realiza a vistoria dos postes onde sua rede será instalada, com um design sofisticado e clean, georreferenciado automaticamente e entregue com rapidez e qualidade. Relatórios antes feitos em horas de trabalho, agora são gerados em segundos, logo após a parceira, Infinitel, tirar as fotos.',
+    images: [
+      { src: 'images/pholeport/home.png', alt: 'inicio do gerador de relatórios fotográficos', extraStyles: 'md:w-[37rem]' },
+      { src: 'images/pholeport/report.png', alt: 'relatório resultante do gerador', extraStyles: 'md:w-[37rem]' },
+    ]
+  },
+  { 
+    name: 'Bot de Anúncios', 
+    description: 'A prova de que não só empresas precisam de soluções de software, mas pessoas físicas também. Esse Bot Notificador minera anúncios em grupos do Facebook, filtrando-os por palavras-chave, e envia o link do mesmo para o empreendedor que o utiliza, fazendo com que ele possa fazer uma oferta antes dos outros usuários.',
+    images: [
+      { src: 'images/facebook-scraper/main.png', alt: 'bot notificando de anúncios recentes no WhatsApp', extraStyles: 'w-[20rem]' },
+    ]
+  }
+]
 ---
 
-<div id='projects' class='relative flex justify-center w-full h-full min-h-screen px-3 md:items-center xl:px-0'>
+<div id='projects' class='relative flex justify-center w-full h-full min-h-screen px-3 mt-0 sm:mt-32 md:mt-0 md:items-center xl:px-0'>
   <div class="hidden lg:block z-0 absolute -top-40 -left-[30rem] h-[50rem] w-[50rem] bg-gradient-to-br from-brand/80 to-tertiaryBrand/80 blur-[80px] animate-spin-slow rounded-full" />
 
-  <div class='z-10 flex flex-col w-full h-auto max-w-6xl gap-5 mt-20 sm:mt-0 md:gap-10'>
+  <div class='z-10 flex flex-col w-full h-full max-w-6xl gap-5 mt-20 sm:mt-0 md:gap-10 md:mb-40'>
     <H1 text="Projetos" extraStyles="text-black" />
-    <span class="text-[1rem] lg:text-2xl font-helveticaNowText">Já resolvemos problemas de organização, tempo, comunicação e padronização.</span>
-    <section class="w-full h-[60vh] rounded-xl p-[0.1rem] pr-0 bg-white/10">
-      <Carousel 
-        projects={[
-          { 
-            name: 'Infinitel: site e sistema de gestão de projetos', 
-            link: 'https://infinitel-telecom.com',
-            images: [
-              { src: 'images/infinitel/edit-project.png', alt: 'edição de projeto no sistema infinitel' },
-              { src: 'images/infinitel/base.png', alt: 'tabela de projetos no sistema infinitel' },
-              { src: 'images/infinitel/calendar.png', alt: 'calendário no sistema infinitel' },
-              { src: 'images/infinitel/dashboard.png', alt: 'dashboard no sistema infinitel' },
-              { src: 'images/infinitel/home.png', alt: 'inicio do site infinitel' },
-            ]
-          },
-          { 
-            name: 'Pholeport: gerador de relatórios fotográficos', 
-            images: [
-              { src: 'images/pholeport/home.png', alt: 'inicio do gerador de relatórios fotográficos', extraStyles: 'md:w-[37rem]' },
-              { src: 'images/pholeport/report.png', alt: 'relatório resultante do gerador', extraStyles: 'md:w-[37rem]' },
-            ]
-          },
-          { 
-            name: 'Últimos anúncios: notificador de anúncios recentes e filtrados', 
-            images: [
-              { src: 'images/facebook-scraper/main.png', alt: 'bot notificando de anúncios recentes no WhatsApp', extraStyles: 'w-[20rem]' },
-              { src: 'images/facebook-scraper/explanation.png', alt: 'explicação do software', extraStyles: 'w-[30rem]' },
-            ]
-          }
-        ]}
-      />
+    <section class="w-full h-[70vh] rounded-xl p-[0.1rem] pr-0 bg-white/10">
+      <Carousel projects={projects} />
     </section>
-    <!-- <CompaniesBenefited /> -->
   </div>
 </div>

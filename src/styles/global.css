@@ -19,5 +19,5 @@
 }
 
 html {
-  @apply scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-gray-500
+  @apply scrollbar-thin scrollbar-track-white scrollbar-thumb-gray-500
 }

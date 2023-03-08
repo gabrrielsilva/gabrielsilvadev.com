@@ -3,7 +3,7 @@
 export interface Props {
   projects: {
     name: string,
-    link?: string,
+    description: string,
     images: {
       src: string,
       alt: string,
@@ -15,53 +15,38 @@ export interface Props {
 const { projects } = Astro.props;
 ---
 
-<div class='relative w-full h-full rounded-xl'>
+<div class='relative w-full h-full rounded-2xl md:rounded-[2.8rem]'>
   {projects.map(project => (
-    <div class='w-full h-full bg-[#171717] mySlides fade rounded-xl'>
-      <div id='scroll-alert' class='absolute flex-col items-center hidden text-2xl text-white md:flex -right-16 -top-20 animate-bounce opacity-60'>
-        <small class='text-sm font-matterSemiBold'>Role para ver detalhes</small>
+    <div class='w-full h-full bg-transparent border-2 border-black md:border-0 md:bg-black mySlides fade rounded-2xl md:rounded-[2.8rem]'>
+      <div id='scroll-alert' class='absolute flex-col items-center hidden text-2xl text-black md:flex -right-16 -top-20 animate-bounce'>
+        <small class='text-lg font-helveticaNowText'>Role a imagem para ver detalhes</small>
         <button class="rotate-90">&#x2794;</button>
       </div>
-      <section id='scroll-projects' class='grid w-full h-full gap-1 overflow-x-hidden overflow-y-scroll rounded-xl pb-9 place-items-center scrollbar-thin scrollbar-thumb-brand'>
+      <section id='scroll-projects' class='grid w-full h-full overflow-x-hidden overflow-y-scroll rounded-2xl md:rounded-[2.8rem] pb-9 place-items-center scrollbar-none'>
         {project.images.map(image => (
-          <img class={'select-none rounded-xl ' + image.extraStyles} src={image.src} alt={image.alt}>
+          <img class={'select-none rounded h-full ' + image.extraStyles} src={image.src} alt={image.alt}>
         ))}
       </section>
-      <div class='absolute bottom-0 w-full py-1 text-center bg-white rounded-b-xl backdrop-blur-sm'>
-        <p class="font-matterSemiBold text-[16px] sm:text-xl text-black">
-          {project.name}
-        </p>
-        {project.link ? (
-          <a class='absolute bottom-0 items-center hidden h-full gap-2 sm:flex right-5' href={project?.link}>
-            <img class='w-5 h-5' src='icons/externallink.svg' alt='icone de link externo'>
-            <span class="text-[16px] font-matterRegular">Ver projeto</span>
-          </a>
-        ): ''}
+      <div class='hidden absolute w-[80%] h-48 sm:flex flex-col justify-center rounded-xl -bottom-10 -right-2 xl:-right-10 bg-[#e2e0d6] p-4 border-b-2 border-r-2 border-dashed border-black'>
+        <span class="font-matterSemiBold text-[1rem] sm:text-2xl text-black">{project.name}</span>
+        <p class="text-[1rem] md:text-lg font-helveticaNowText">{project.description}</p>
+      </div>
+      <div class="absolute flex flex-col -bottom-14 bg-[#e2e0d6] mx-2 p-2 rounded-xl sm:hidden">
+        <h3 class="text-xl font-matterSemiBold"><span class="mr-2 text-brand">|</span>{project.name}</h3>
+        <span class="text-[0.85rem] lg:text-xl font-helveticaNowText">{project.description}</span>
       </div>
     </div>
   ))}
 
-  <div class='w-full h-full bg-[#171717] mySlides fade rounded-xl'>
-    <span class='absolute text-xl text-center text-white top-1/2 left-10 font-matterSemiBold'>Em breve mais...</span>
+  <div class='w-full h-full bg-secondaryBrand mySlides rounded-2xl md:rounded-[2.8rem]'>
+    <span class='absolute text-xl text-black top-1/2 left-20 md:left-10 font-matterSemiBold'>Em breve mais...</span>
   </div>
 
-  <div class='text-2xl font-bold text-white select-none'>
-    <button id='prev' class='hover:bg-black/80 w-min absolute top-1/2 xl:-left-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10094;</button>
-    <button id='next' class='hover:bg-black/80 w-min absolute top-1/2 right-0 xl:-right-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10095;</button>
+  <div class='text-4xl font-bold text-white select-none xl:text-black'>
+    <button id='prev' class='hover:border-2 hover:border-black bg-black xl:bg-transparent rounded-xl w-min absolute top-1/2 xl:-left-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10094;</button>
+    <button id='next' class='hover:border-2 hover:border-black bg-black xl:bg-transparent rounded-xl w-min absolute top-1/2 right-0 xl:-right-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10095;</button>
   </div>
 </div>
-
-<style>
-  .fade {
-    animation-name: fade;
-    animation-duration: 1s;
-  }
-
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-</style>
 
 <script>
   (document.getElementById('prev') as HTMLButtonElement).addEventListener('click', () => plusSlides(-1));
