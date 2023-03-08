@@ -87,7 +87,7 @@ export default function ServiceTabs() {
       {/* <img src="icons/circles2.svg" alt="" className="animate-pulse hidden h-[30rem] w-[30rem] absolute -left-60 top-[40%] -translate-y-1/2 md:block" /> */}
       <img src="icons/circles1.svg" alt="" className="animate-spin-slow hidden h-[30rem] w-[30rem] absolute -right-24 bottom-60 md:block select-none" />
 
-      <div className='z-10 flex flex-col w-full max-w-6xl gap-10 md:border-t-2 md:gap-20 md:py-28 md:border-t-black/5'>
+      <div className='z-10 flex flex-col w-full max-w-6xl gap-10 md:border-t-2 md:gap-16 md:py-28 md:border-t-black/5'>
         <header className="flex flex-col gap-5">
           <h1 className='flex-initial text-black text-[2.6rem] leading-[1] sm:leading-10 md:text-6xl lg:text-7xl font-helveticaNowText'>
             Como podemos ajudar?
@@ -99,7 +99,7 @@ export default function ServiceTabs() {
                 key={serviceButton.name} 
                 onClick={() => setService(services.find(s => s.name === serviceButton.name) as typeof service)}
                 className={
-                  "flex items-center justify-center select-none lg:w-auto px-4 py-[0.35rem] lg:py-4 text-sm lg:text-[16px] font-matterRegular leading-4 rounded-full h-[2.75rem] lg:h-auto bg-brand duration-200 gap-2 "
+                  "flex items-center justify-center select-none lg:w-auto px-4 py-[0.35rem] lg:py-4 text-sm lg:text-[16px] font-matterRegular leading-4 rounded-full h-[2.75rem] lg:h-auto bg-brand duration-200 gap-2 hover:bg-white hover:ring-2 hover:ring-black "
                   + (service.name === serviceButton.name ? 'bg-white text-black invert' : '')
                 }
               >

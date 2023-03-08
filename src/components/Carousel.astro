@@ -22,13 +22,13 @@ const { projects } = Astro.props;
         <small class='text-lg font-helveticaNowText'>Role a imagem para ver detalhes</small>
         <button class="rotate-90">&#x2794;</button>
       </div>
-      <section id='scroll-projects' class='grid w-full h-full overflow-x-hidden overflow-y-scroll rounded-2xl pb-9 place-items-center scrollbar-none'>
+      <section id='scroll-projects' class='grid w-full h-full overflow-x-hidden overflow-y-scroll rounded-xl pb-9 place-items-center scrollbar-none'>
         {project.images.map(image => (
           <img class={'select-none rounded h-full ' + image.extraStyles} src={image.src} alt={image.alt}>
         ))}
       </section>
       <div class='hidden absolute w-[80%] h-48 sm:flex flex-col justify-center rounded-xl -bottom-10 -right-2 xl:-right-10 bg-[#e2e0d6] p-4 border-b-2 border-r-2 border-black'>
-        <span class="font-matterSemiBold text-[1rem] sm:text-2xl text-black">{project.name}</span>
+        <span class="font-matterSemiBold text-[1rem] sm:text-2xl text-black"><span class="mr-2 text-brand">|</span>{project.name}</span>
         <p class="text-[1rem] md:text-lg font-helveticaNowText">{project.description}</p>
       </div>
       <div class="absolute flex flex-col -bottom-14 bg-[#e2e0d6] mx-2 p-2 rounded-xl sm:hidden">
@@ -42,7 +42,7 @@ const { projects } = Astro.props;
     <span class='absolute text-xl text-black md:text-white top-1/2 left-20 md:left-10 font-matterSemiBold'>Em breve mais...</span>
   </div>
 
-  <div class='text-4xl font-bold text-white select-none xl:text-black'>
+  <div class='text-xl md:text-4xl font-bold text-white select-none xl:text-black'>
     <button id='prev' class='hover:border-2 hover:border-black bg-black xl:bg-transparent rounded-xl w-min absolute top-1/2 xl:-left-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10094;</button>
     <button id='next' class='hover:border-2 hover:border-black bg-black xl:bg-transparent rounded-xl w-min absolute top-1/2 right-0 xl:-right-20 cursor-pointer mt-[-22px] p-4 transition duration-500 ease-in'>&#10095;</button>
   </div>
