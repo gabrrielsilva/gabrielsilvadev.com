@@ -11,7 +11,9 @@ module.exports = {
 				matterRegular: ['Matter Regular'],
 				matterSemiBold: ['Matter SemiBold'],
 				matterHeavy: ['Matter Heavy'],
-				helveticaNowText: ['Helvetica Now Text']
+				helveticaNowText: ['Helvetica Now Text Regular'],
+				helveticaNowTextMedium: ['Helvetica Now Text Medium'],
+				helveticaNowTextLight: ['Helvetica Now Text Light'],
 			},
 			animation: {
         'spin-slow': 'spin 3s linear infinite',

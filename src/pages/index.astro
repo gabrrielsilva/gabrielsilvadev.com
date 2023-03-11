@@ -1,6 +1,7 @@
 ---
 import Contact from '../components/Contact.astro';
 import Header from '../components/Header.astro';
+import Legacy from '../components/Legacy.astro';
 import Presentation from '../components/Presentation.astro';
 import Projects from '../components/Projects.astro';
 import Services from '../components/Services.jsx';
@@ -14,7 +15,7 @@ import '../styles/global.css';
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
     <meta name='generator' content={Astro.generator} />
-    <title>Gabriel Silva — Desenvolvedor</title>
+    <title>gabrielsilvadev | Software House</title>
   </head>
 
   <body>
@@ -23,6 +24,7 @@ import '../styles/global.css';
       <Header />
       <Presentation />
       <Services client:load />
+      <Legacy />
       <Projects />
       <!-- <About /> -->
       <Contact />

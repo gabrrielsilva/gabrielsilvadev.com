@@ -1,0 +1,16 @@
+---
+import Button from "./Button.astro";
+import H1 from "./typography/H1.astro";
+
+---
+
+<div class="w-full px-4 flex flex-col gap-5 mt-40">
+  <H1 text="Seus problemas, nossas soluções" extraStyles="" />
+  <p class="text-[19px] leading-7 font-helveticaNowTextMedium text-zinc-800">Nossa missão é empoderar negócios com a transformação digital, com foco nos processos, cultura e experiência do usuário. Queremos democratizar os benefícios da tecnologia.</p>
+  <Button id='i_want_a_project_button' text="Quero um projeto" arrow={true} extraStyles="bg-white text-black w-min invert whitespace-nowrap py-3.5 px-6 mt-10 hover:invert-0 hover:bg-brand hover:ring-2 hover:ring-black" />
+</div>
+
+<script>
+  const projectsButton = document.getElementById('i_want_a_project_button') as HTMLButtonElement;
+  projectsButton.addEventListener('click', () => (document.getElementById('contact') as HTMLDivElement).scrollIntoView());
+</script>

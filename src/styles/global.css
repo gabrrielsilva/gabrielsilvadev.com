@@ -14,8 +14,18 @@
 }
 
 @font-face {
-  font-family: 'Helvetica Now Text';
+  font-family: 'Helvetica Now Text Regular';
   src: url(/fonts/HelveticaNowText-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Helvetica Now Text Medium';
+  src: url(/fonts/HelveticaNowText-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'Helvetica Now Text Light';
+  src: url(/fonts/HelveticaNowText-Light.ttf);
 }
 
 html {

@@ -92,14 +92,14 @@ export default function ServiceTabs() {
           <h1 className='flex-initial text-black text-[2.6rem] leading-[1] sm:leading-10 md:text-6xl lg:text-7xl font-helveticaNowText'>
             Como podemos ajudar?
           </h1>
-          <span className="text-[1rem] lg:text-2xl font-helveticaNowText">Toda empresa precisa de soluções de software, algumas apenas não sabem disso, e ficariam maravilhadas se soubessem o que é possível fazer com tecnologia.</span>
+          <p className='text-[19px] leading-7 text-zinc-800 md:text-2xl font-helveticaNowTextMedium md:font-helveticaNowText'>Toda empresa precisa de soluções de software, algumas apenas não sabem disso, e ficariam maravilhadas se soubessem o que é possível fazer com tecnologia.</p>
           <section className="flex flex-wrap items-center gap-3 mt-10">
             {services.map(serviceButton => (
               <button 
                 key={serviceButton.name} 
                 onClick={() => setService(services.find(s => s.name === serviceButton.name) as typeof service)}
                 className={
-                  "flex items-center justify-center select-none lg:w-auto px-4 py-[0.35rem] lg:py-4 text-sm lg:text-[16px] font-matterRegular leading-4 rounded-full h-[2.75rem] lg:h-auto bg-brand duration-200 gap-2 hover:bg-white hover:ring-2 hover:ring-black "
+                  "flex items-center justify-center select-none lg:w-auto px-4 py-[0.35rem] lg:py-4 text-[16px] font-helveticaNowTextMedium leading-4 rounded-full h-[2.75rem] lg:h-auto bg-brand duration-200 gap-2 hover:bg-white hover:ring-2 hover:ring-black "
                   + (service.name === serviceButton.name ? 'bg-white text-black invert' : '')
                 }
               >
@@ -111,10 +111,10 @@ export default function ServiceTabs() {
         <div className='relative flex flex-col flex-auto gap-20 lg:gap-32'>
           <section className="bg-[#e2e0d6] w-full h-auto sm:h-[33rem] rounded-2xl md:rounded-[2.8rem] flex flex-col gap-3 md:gap-0 md:grid md:grid-cols-3 p-4 md:p-10">
             <picture ref={tilt} style={{ transition: 'box-shadow 0.1s, transform 0.1s' }} className="flex items-center select-none w-full h-[27vh] md:h-auto lg:h-full col-span-2 bg-[#cbc9c0] overflow-hidden rounded-lg md:rounded-3xl xl:block my-0 mx-auto hover:cursor-pointer">
-              <img loading='lazy' src={service.image} alt={service.name} className='object-cover object-top w-full h-full sm:h-min sm:object-contain xl:h-full xl:object-cover' />
+              <img src={service.image} alt={service.name} className='object-cover object-top w-full h-full sm:h-min sm:object-contain xl:h-full xl:object-cover' />
             </picture>
             <span className="flex flex-col justify-center gap-2 sm:gap-5 md:px-5">
-              <h3 className="text-2xl md:text-4xl xl:text-[2.6rem] font-matterSemiBold">{service.name}</h3>
+              <h3 className="text-2xl md:text-4xl xl:text-[2.6rem] font-helveticaNowTextMedium">{service.name}</h3>
               <span className="text-[1rem] lg:text-xl font-helveticaNowText">{service.description}</span>
             </span>
           </section>
