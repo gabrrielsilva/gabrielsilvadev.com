@@ -28,9 +28,9 @@ const { projects } = Astro.props;
           <img class={'select-none rounded h-full ' + image.extraStyles} src={image.src} alt={image.alt}>
         ))}
       </section>
-      <div class='hidden absolute w-[80%] h-48 sm:flex flex-col justify-center rounded-xl -bottom-10 -right-2 xl:-right-10 bg-[#e2e0d6] p-4 border-b-2 border-r-2 border-black'>
+      <div class='hidden absolute w-[80%] h-[13rem] xl:h-[12rem] sm:flex flex-col justify-center rounded-xl -bottom-10 -right-2 xl:-right-10 bg-[#e2e0d6] p-4 border-b-2 border-r-2 border-black'>
         <span class="font-matterSemiBold text-[1rem] sm:text-2xl text-black"><span class="mr-2 text-brand">|</span>{project.name}</span>
-        <Paragraph text={project.description} extraStyles="text-[1rem] sm:text-sm md:text-[18px] md:leading-[1.5rem]" />
+        <Paragraph text={project.description} extraStyles="text-[1rem] sm:text-sm md:text-[20px] md:leading-[1.5rem]" />
       </div>
       <div class="absolute flex flex-col -bottom-14 bg-[#e2e0d6] mx-2 p-2 rounded-xl sm:hidden">
         <h3 class="text-xl font-matterSemiBold md:text"><span class="mr-2 text-brand">|</span>{project.name}</h3>

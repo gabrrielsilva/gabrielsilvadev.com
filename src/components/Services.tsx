@@ -87,7 +87,7 @@ export default function ServiceTabs() {
       {/* <img src="icons/circles2.svg" alt="" className="animate-pulse hidden h-[30rem] w-[30rem] absolute -left-60 top-[40%] -translate-y-1/2 md:block" /> */}
       <img src="icons/circles1.svg" alt="" className="animate-spin-slow hidden h-[30rem] w-[30rem] absolute -right-24 bottom-60 md:block select-none" />
 
-      <div className='z-10 flex flex-col w-full max-w-6xl gap-10 md:border-t-2 md:gap-16 md:py-28 md:border-t-black/5'>
+      <div className='z-10 flex flex-col w-full max-w-6xl gap-10 md:border-t-2 md:gap-16 md:py-28 md:border-t-black/10'>
         <header className="flex flex-col gap-5">
           <h1 className='flex-initial text-black text-[2.6rem] leading-[1] sm:leading-10 md:text-6xl lg:text-7xl font-helveticaNowText'>
             Como podemos ajudar?
@@ -109,7 +109,7 @@ export default function ServiceTabs() {
           </section>
         </header>
         <div className='relative flex flex-col flex-auto gap-20 lg:gap-32'>
-          <section className="bg-[#e2e0d6] w-full h-auto sm:h-[33rem] rounded-2xl md:rounded-[2.8rem] flex flex-col gap-3 md:gap-0 md:grid md:grid-cols-3 p-4 md:p-10">
+          <section className="bg-[#e2e0d6] w-full h-auto sm:h-[28rem] md:h-auto rounded-2xl md:rounded-[2.8rem] flex flex-col gap-3 md:gap-0 md:grid md:grid-cols-3 p-4 md:p-10">
             <picture ref={tilt} style={{ transition: 'box-shadow 0.1s, transform 0.1s' }} className="flex items-center select-none w-full h-[27vh] md:h-auto lg:h-full col-span-2 bg-[#cbc9c0] overflow-hidden rounded-lg md:rounded-3xl xl:block my-0 mx-auto hover:cursor-pointer">
               <img src={service.image} alt={service.name} className='object-cover object-top w-full h-full sm:h-min sm:object-contain xl:h-full xl:object-cover' />
             </picture>

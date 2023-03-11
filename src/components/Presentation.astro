@@ -8,24 +8,24 @@ const carousel = Array(5).fill(logos).flat() as string[];
 ---
 <div
   id="presentation"
-  class='grid w-full max-w-6xl min-h-screen h-[calc(100%-24px)] sm:h-full px-3 gap-14 sm:gap-10 pt-[6rem] md:pt-0 md:min-h-0 md:h-[45rem] md:grid-cols-2 xl:p-0 mb-10 md:mb-0'
+  class='grid w-full max-w-6xl min-h-screen h-full sm:h-full px-3 gap-14 sm:gap-10 pt-[6rem] md:pt-0 md:min-h-0 md:h-[45rem] md:grid-cols-2 xl:p-0 mb-10 md:mb-0'
 >
   <div class="blur-[70px] absolute -top-20 -left-20 sm:left-auto h-96 w-80 rounded-full sm:h-[40rem] sm:w-[60rem] bg-brand/80 sm:blur-[120px] sm:right-40 sm:-top-48"></div>
   <div class="blur-[80px] absolute -top-20 -right-20 h-[30rem] w-80 rounded-full sm:h-[40rem] sm:w-[40rem] bg-tertiaryBrand/80 md:bg-tertiaryBrand sm:blur-[120px] sm:-right-20 sm:top-18"></div>
   
-  <section class='z-20 flex flex-col items-start justify-start gap-8 text-left sm:justify-center max-w-[18rem] md:max-w-none xl:max-w-lg'>
+  <section class='z-20 flex flex-col items-start justify-start gap-8 text-left sm:justify-center max-w-[22rem] md:max-w-none xl:max-w-lg'>
     <!-- <small class='text-[1rem] sm:text-xl select-none text-black font-helveticaNowText whitespace-nowrap'>Desenvolvimento de software</small> -->
-    <H1 text="Simplificamos sua vida com tecnologia" extraStyles="text-black leading-[1em] text-[45px]" />
-    <Paragraph text="Desenvolvemos soluções de software que aumentam a produtividade, reduzem os prazos e padronizam processos." extraStyles="font-helveticaNowText" />
+    <H1 text="Simplificamos sua vida com tecnologia" extraStyles="text-black leading-[1em] text-[46px]" />
+    <Paragraph text="Desenvolvemos soluções de software que aumentam a produtividade, reduzem os prazos e padronizam processos." extraStyles="" />
     <div class='flex items-center gap-3 mt-2 select-none'>
-      <Button id='contact_button_presentation' text="Entrar em contato" arrow={true} extraStyles="w-36 bg-brand duration-200 hover:bg-white hover:text-black hover:invert" />
-      <Button id='projects_button_presentation' text="Ver projetos" arrow={true} extraStyles="w-36 bg-transparent duration-200 py-3 whitespace-nowrap lg:py-3.5 border-2 border-black hover:bg-black/10" />
+      <Button id='contact_button_presentation' text="Entrar em contato" arrow={true} extraStyles="w-auto max-w-[10rem] md:max-w-none lg:px-6 md:py-3.5 bg-brand duration-200 hover:bg-white hover:text-black hover:invert" />
+      <Button id='projects_button_presentation' text="Ver projetos" arrow={true} extraStyles="w-auto px-3 bg-transparent duration-200 py-3 whitespace-nowrap lg:py-3.5 border-2 border-black hover:bg-black/10" />
     </div>
   </section>
   <section class='relative flex items-start justify-center overflow-hidden select-none md:justify-end sm:overflow-visible'>
     <img src="images/notebookmockup.png" alt="" class="hidden md:block md:mt-40 lg:mt-0 lg:absolute lg:top-24 lg:-right-5 animate-bounce-slow">
-    <div class="flex flex-col w-full h-20 mb-10 mt-10 md:hidden">
-      <h3 class="text-[1rem] text-black md:text-3xl font-helveticaNowText -mb-5">Empresas beneficiadas por nossas soluções</h3>
+    <div class="flex flex-col w-full py-[20vw] md:hidden">
+      <h3 class="text-[1rem] text-black md:text-3xl font-helveticaNowTextMedium -mb-5">Empresas beneficiadas por nossas soluções</h3>
       <div class="flex animate-scroll w-[calc(250px*14)]">
         {carousel.map((logo, i) => (
           <div class="flex justify-center items-center h-[100px] w-[150px]">

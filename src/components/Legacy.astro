@@ -1,13 +1,18 @@
 ---
 import Button from "./Button.astro";
 import H1 from "./typography/H1.astro";
+import Paragraph from './typography/Paragraph.astro';
 
 ---
 
-<div class="w-full px-4 flex flex-col gap-5 mt-40">
-  <H1 text="Seus problemas, nossas soluções" extraStyles="" />
-  <p class="text-[19px] leading-7 font-helveticaNowTextMedium text-zinc-800">Nossa missão é empoderar negócios com a transformação digital, com foco nos processos, cultura e experiência do usuário. Queremos democratizar os benefícios da tecnologia.</p>
-  <Button id='i_want_a_project_button' text="Quero um projeto" arrow={true} extraStyles="bg-white text-black w-min invert whitespace-nowrap py-3.5 px-6 mt-10 hover:invert-0 hover:bg-brand hover:ring-2 hover:ring-black" />
+<div class="flex items-center justify-center w-full h-screen sm:h-full sm:pt-40 sm:pb-24 md:pb-60">
+  <div class="flex flex-col max-w-6xl gap-5 px-4 xl:px-0 md:grid md:grid-cols-2 md:place-content-center lg:gap-10">
+    <H1 text="Seus problemas, nossas soluções." extraStyles="xl:max-w-md" />
+    <div class="flex flex-col md:justify-between lg:justify-center">
+      <Paragraph extraStyles="" text='Nossa missão é empoderar negócios com a transformação digital, com foco nos processos, cultura e experiência do usuário. Queremos democratizar os benefícios da tecnologia.' />
+      <Button id='i_want_a_project_button' text="Quero um projeto" arrow={true} extraStyles="bg-white text-black invert whitespace-nowrap py-3.5 px-6 mt-10 hover:invert-0 hover:bg-brand hover:ring-2 hover:ring-black" />
+    </div>
+  </div>
 </div>
 
 <script>

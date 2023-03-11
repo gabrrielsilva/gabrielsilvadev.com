@@ -1,6 +1,6 @@
 ---
-import Brand from './Brand.astro';
-import Tooltip from './Tooltip.astro';
+import H1 from "./typography/H1.astro";
+import Paragraph from './typography/Paragraph.astro';
 
 const socialNetworks = [
   {
@@ -43,49 +43,21 @@ const contacts = [
 ]
 ---
 
-<div id="contact" class='relative flex justify-center w-full h-full min-h-screen px-3 overflow-hidden sm:min-h-0 bg-secondaryBrand md:h-screen xl:px-0'>
-  <!-- <div class="absolute w-full bottom-1/3 h-1/2 bg-gradient-to-t from-brand blur-xl to-transparent -right-60 md:-right-[35rem] lg:-right-[65rem] lg:-top-10 2xl:-right-[110rem]" />
-  <div class="absolute w-full -bottom-40 h-1/2 bg-gradient-to-t from-[#7f5fd8] blur-xl to-transparent -left-60 md:-left-[30rem] lg:-left-[70rem] 2xl:-left-[105rem]" /> -->
-
-  <div class='z-10 grid w-full max-w-6xl py-20 gap-14 md:py-40 md:grid-cols-2 lg:px-0 place-content-center place-items-center'>
-    <section class='flex flex-col justify-between w-full h-full'>
-      <h1 class='mt-5 mb-20 text-3xl text-black md:mb-10 md:text-5xl font-matterRegular whitespace-nowrap'>Vamos criar algo incrível?</h1>
-      <div class='flex flex-col gap-3'>
+<div id="contact" class='h-[25rem] w-screen bg-gradient-to-br from-brand to-tertiaryBrand px-4 mt-20 flex justify-center'>
+  <div class="flex flex-col justify-center w-full gap-10 lg:max-w-6xl">
+    <H1 text="Vamos criar algo incrível?" extraStyles="" />
+    <section class="flex flex-col gap-3">
+      <ul class="flex flex-col gap-3">
         {contacts.map(contact => (
-          <div class='flex items-center gap-3'>
-            <a class='flex items-center gap-3 text-white w-max' href={contact.link}>
-              <img class='w-6 h-6' src={contact.iconPath} alt={contact.iconDescription}>
-              <p class='cursor-pointer text-black text-lg font-matterRegular sm:inline-block after:block after:w-0 after:h-[2px] after:bg-black after:transition-[width] after:duration-500 hover:after:w-full'>{contact.contact}</p>
-            </a>
-            <div class='transition duration-300 opacity-70 hover:opacity-100'>
-              <Tooltip tooltipText='Copiar contato'>
-                <button id={contact.name} value={contact.contact}>
-                  <img class='w-6 h-6 -mb-1' src='/icons/clipboard.svg' alt='copiar contato'>
-                </button>
-              </Tooltip>
-            </div>
-          </div>
+          <li class="flex items-center gap-3 font-helveticaNowTextMedium">
+            <figure class="flex items-center justify-center w-8 h-8 bg-black rounded-full">
+              <img src={contact.iconPath} alt={contact.iconDescription} class="w-6 h-6 invert">
+            </figure>
+            <Paragraph text={contact.contact} extraStyles="" />
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
-    <section class='grid w-full grid-cols-2 gap-10 place-items-center md:place-items-end md:grid-cols-1'>
-      <div class='w-full select-none rounded-3xl md:w-auto md:h-80'>
-        <img class='object-contain w-full h-full border-2 border-black rounded-3xl' src='images/gabriel.jpg' alt=''>
-      </div>
-      <div class='flex flex-col items-end justify-center h-full text-black font-matterRegular text-start md:text-end sm:items-start md:items-end'>
-        <Brand />
-        <small>Desenvolvedor full stack</small>
-        <div class='flex items-center justify-start gap-3 mt-3 md:justify-end'>
-          {socialNetworks.map(socialNetwork => (
-            <a href={socialNetwork.link}>
-              <img class='w-6 h-6 saturate-0 brightness-0' src={socialNetwork.iconPath} alt={socialNetwork.name}>
-            </a>
-          ))}
-        </div>
-        <small class='hidden w-full mt-5 text-sm md:block text-black/70 font-matterRegular'>&copy; {new Date().getFullYear()} <span class="text-black font-matterSemiBold">Gabriel Silva</span>. Todos os cafés reservados.</small>
-      </div>
-    </section>
-    <small class='w-full text-sm md:hidden text-black/70 font-matterRegular'>&copy; {new Date().getFullYear()} <span class="text-black font-matterSemiBold">Gabriel Silva</span>. Todos os cafés reservados.</small>
   </div>
 </div>
 
