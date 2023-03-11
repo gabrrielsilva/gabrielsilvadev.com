@@ -1,6 +1,5 @@
 ---
 import Button from "./Button.astro";
-import H1 from './typography/H1.astro';
 import Paragraph from "./typography/Paragraph.astro";
 
 const logos = ['icons/tobrasil.png', 'icons/infinitel.png', 'icons/tim.svg'];
@@ -15,7 +14,7 @@ const carousel = Array(5).fill(logos).flat() as string[];
   
   <section class='z-20 flex flex-col items-start justify-start gap-8 text-left sm:justify-center max-w-[22rem] md:max-w-none xl:max-w-lg'>
     <!-- <small class='text-[1rem] sm:text-xl select-none text-black font-helveticaNowText whitespace-nowrap'>Desenvolvimento de software</small> -->
-    <H1 text="Simplificamos sua vida com tecnologia" extraStyles="text-black leading-[1em] text-[47px]" />
+    <h1 class='sm:leading-10 md:text-6xl lg:text-7xl font-helveticaNowText tracking-tighter text-black leading-[1em] text-[48px]'>Simplificamos sua vida com tecnologia</h1>
     <Paragraph text="Desenvolvemos soluções de software que aumentam a produtividade, reduzem os prazos e padronizam processos." extraStyles="" />
     <div class='flex items-center gap-3 mt-2 select-none'>
       <Button id='contact_button_presentation' text="Entrar em contato" arrow={true} extraStyles="w-auto max-w-[9rem] md:max-w-none lg:px-6 md:py-3.5 bg-brand duration-200 hover:bg-white hover:text-black hover:invert" />
