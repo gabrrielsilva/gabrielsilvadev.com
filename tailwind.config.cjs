@@ -19,6 +19,7 @@ module.exports = {
         'spin-slow': 'spin 3s linear infinite',
 				'scroll': 'scroll 30s linear infinite',
 				'bounce-slow': 'bounce 3s infinite',
+				'gradient-bg': 'gradient 3s ease infinite'
       },
 			keyframes: {
 				scroll: {
@@ -33,6 +34,17 @@ module.exports = {
 					'50%': {
 						transform: 'translateY(0)',
 						'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
+					}
+				},
+				gradient: {
+					'0%': {
+						'background-position': '0% 50%'
+					},
+					'50%': {
+						'background-position': '100% 50%'
+					},
+					'100%': {
+						'background-position': '0% 50%'
 					}
 				}
 			}

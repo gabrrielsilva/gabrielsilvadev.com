@@ -1,4 +1,6 @@
 ---
+import Button from "./Button.astro";
+import Tooltip from "./Tooltip.astro";
 import H1 from "./typography/H1.astro";
 import Paragraph from './typography/Paragraph.astro';
 
@@ -35,36 +37,50 @@ const contacts = [
     contact: '15 99777 3109',
     link: 'tel:15997773109'
   },
-  {
-    iconPath: 'icons/placemark.svg',
-    iconDescription: 'marcador de mapa',
-    contact: 'Salto de Pirapora - SP'
-  }
+  // {
+  //   iconPath: 'icons/placemark.svg',
+  //   iconDescription: 'marcador de mapa',
+  //   contact: 'Salto de Pirapora - SP'
+  // }
 ]
 ---
 
-<div id="contact" class='h-[25rem] w-screen bg-gradient-to-br from-brand to-tertiaryBrand px-4 mt-20 flex justify-center'>
-  <div class="flex flex-col justify-center w-full gap-10 lg:max-w-6xl">
-    <H1 text="Vamos criar algo incrível?" extraStyles="" />
+<div id="contact" class='relative h-[40rem] w-screen bg-gradient-to-br from-brand to-[#e1ff25] bg-[length:400%_400%] animate-gradient-bg px-4 mt-20 flex justify-center'>
+  <img class="hidden 2xl:block absolute h-80 w-auto top-1/2 -left-32 -translate-y-1/2" src="icons/circles1.svg" alt="">
+
+  <div class="flex flex-col justify-center w-full gap-10 lg:max-w-6xl lg:grid lg:grid-cols-2 lg:place-content-center lg:place-items-center">
+    <H1 text="Vamos criar algo incrível? Entre em contato conosco." extraStyles="" />
     <section class="flex flex-col gap-3">
+      <!-- <h3 class="text-2xl md:text-4xl font-helveticaNowTextMedium ml-2.5">| Contatos</h3> -->
       <ul class="flex flex-col gap-3">
         {contacts.map(contact => (
-          <li class="flex items-center gap-3 font-helveticaNowTextMedium">
-            <figure class="flex items-center justify-center w-8 h-8 bg-black rounded-full">
-              <img src={contact.iconPath} alt={contact.iconDescription} class="w-5 h-5 invert" />
-            </figure>
-            <Paragraph text={contact.contact} extraStyles="" />
+          <li class="flex items-center gap-3">
+            <a href={contact.link} class="font-helveticaNowTextMedium flex items-center gap-3">
+              <figure class="flex items-center justify-center w-8 h-8 bg-black rounded-full">
+                <img src={contact.iconPath} alt={contact.iconDescription} class="w-5 h-5 invert" />
+              </figure>
+              <Paragraph text={contact.contact} extraStyles="" />
+            </a>
+            <div class='transition duration-300'>
+              <Tooltip tooltipText='Copiar contato'>
+                <button id={contact.name} value={contact.contact}>
+                  <img class='w-5 h-5 -mb-1' src='/icons/clipboard.svg' alt='copiar contato' />
+                </button>
+              </Tooltip>
+            </div>
           </li>
         ))}
+        <p class="text-lg font-helveticaNowTextMedium">Ou...</p>
+        <Button text="Falar no WhatsApp" extraStyles="bg-white text-black invert px-6 py-3.5 whitespace-nowrap hover:invert-0 hover:duration-200 hover:ring-2 hover:ring-black" Icon='icons/whatsapp.svg' />
       </ul>
     </section>
   </div>
 </div>
 
-<!-- <script>
+<script>
   const mailButton = document.getElementById('email') as HTMLButtonElement;
   const telephoneButton = document.getElementById('telefone') as HTMLButtonElement;
 
   mailButton.addEventListener('click', () => navigator.clipboard.writeText(mailButton.value));
   telephoneButton.addEventListener('click', () => navigator.clipboard.writeText(telephoneButton.value));
-</script> -->
+</script>

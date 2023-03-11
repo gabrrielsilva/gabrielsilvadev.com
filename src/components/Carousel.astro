@@ -15,9 +15,9 @@ export interface Props {
 const { projects } = Astro.props;
 ---
 
-<div class='relative w-full h-full rounded-2xl'>
+<div class='relative w-full h-full rounded'>
   {projects.map(project => (
-    <div class='w-full h-full bg-transparent border-2 border-black md:border-0 md:bg-black mySlides fade rounded-2xl'>
+    <div class='w-full h-full bg-transparent border-2 border-black md:border-0 md:bg-black mySlides fade rounded'>
       <div id='scroll-alert' class='absolute right-0 flex-col items-center hidden text-2xl text-black md:flex -top-20 animate-bounce'>
         <small class='text-lg font-helveticaNowText'>Role a imagem para ver detalhes</small>
         <button class="rotate-90">&#x2794;</button>
@@ -27,7 +27,7 @@ const { projects } = Astro.props;
           <img class={'select-none rounded h-full ' + image.extraStyles} src={image.src} alt={image.alt} />
         ))}
       </section>
-      <div class='hidden absolute w-[80%] h-[13rem] xl:h-[12rem] sm:flex flex-col justify-center rounded-xl -bottom-10 -right-2 xl:-right-10 bg-[#e2e0d6] p-4 border-b-2 border-r-2 border-black'>
+      <div class='hidden absolute w-[80%] h-[13rem] xl:h-[12rem] sm:flex flex-col justify-center rounded-[2.8rem] -bottom-10 -right-2 xl:-right-10 bg-[#e2e0d6] p-4 border-b-2 border-r-2 border-black'>
         <span class="font-matterSemiBold text-[1rem] sm:text-2xl text-black"><span class="mr-2 text-brand">|</span>{project.name}</span>
         <p class='leading-7 font-helveticaNowTextMedium text-zinc-900 md:font-helveticaNowText text-[1rem] sm:text-[1rem] sm:leading-5 md:text-[18px] md:leading-6'>{project.description}</p>
       </div>
