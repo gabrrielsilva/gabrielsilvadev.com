@@ -25,7 +25,7 @@ const { projects } = Astro.props;
       </div> 
       <section id='scroll-projects' class='grid w-full h-full overflow-x-hidden overflow-y-scroll rounded-xl pb-9 place-items-center scrollbar-none'>
         {project.images.map(image => (
-          <img class={'select-none rounded h-full ' + image.extraStyles} src={image.src} alt={image.alt}>
+          <img class={'select-none rounded h-full ' + image.extraStyles} src={image.src} alt={image.alt} />
         ))}
       </section>
       <div class='hidden absolute w-[80%] h-[13rem] xl:h-[12rem] sm:flex flex-col justify-center rounded-xl -bottom-10 -right-2 xl:-right-10 bg-[#e2e0d6] p-4 border-b-2 border-r-2 border-black'>

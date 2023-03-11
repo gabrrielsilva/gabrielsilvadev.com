@@ -51,7 +51,7 @@ const contacts = [
         {contacts.map(contact => (
           <li class="flex items-center gap-3 font-helveticaNowTextMedium">
             <figure class="flex items-center justify-center w-8 h-8 bg-black rounded-full">
-              <img src={contact.iconPath} alt={contact.iconDescription} class="w-5 h-5 invert">
+              <img src={contact.iconPath} alt={contact.iconDescription} class="w-5 h-5 invert" />
             </figure>
             <Paragraph text={contact.contact} extraStyles="" />
           </li>
@@ -61,10 +61,10 @@ const contacts = [
   </div>
 </div>
 
-<script>
+<!-- <script>
   const mailButton = document.getElementById('email') as HTMLButtonElement;
   const telephoneButton = document.getElementById('telefone') as HTMLButtonElement;
 
   mailButton.addEventListener('click', () => navigator.clipboard.writeText(mailButton.value));
   telephoneButton.addEventListener('click', () => navigator.clipboard.writeText(telephoneButton.value));
-</script>
+</script> -->
