@@ -18,7 +18,7 @@ const { projects } = Astro.props;
 
 <div class='relative w-full h-full rounded-2xl'>
   {projects.map(project => (
-    <div class='hidden w-full h-full bg-transparent border-2 border-black md:border-0 md:bg-black mySlides fade rounded-2xl'>
+    <div class='w-full h-full bg-transparent border-2 border-black md:border-0 md:bg-black mySlides fade rounded-2xl'>
       <div id='scroll-alert' class='absolute right-0 flex-col items-center hidden text-2xl text-black md:flex -top-20 animate-bounce'>
         <small class='text-lg font-helveticaNowText'>Role a imagem para ver detalhes</small>
         <button class="rotate-90">&#x2794;</button>
