@@ -4,29 +4,29 @@ import H1 from "./typography/H1.astro";
 
 // 'Análise', 'Design', 'Implementação', 'Teste', 'Avaliação', 'Manutenção'
 const process = [
-  { step: 'Análise', image: 'icons/web-analytics.png', rotate: 'ml-2 -mt-5 sm:ml-14 lg:ml-24 2xl:ml-36' },
-  { step: 'Design', image: 'icons/design.png', rotate: 'ml-3 -mt-5 sm:ml-14 lg:ml-24 2xl:ml-36' },
-  { step: 'Aplicação', image: 'icons/implementation.png', rotate: '-ml-3 -mt-1 sm:ml-10 sm:-mb-8 rotate-90 2xl:-mb-10 2xl:ml-28' },
-  { step: 'Manutenção', image: 'icons/maintenance.png', rotate: '-ml-16 -mt-9 -rotate-90 sm:-ml-3 2xl:ml-16 2xl:-mt-10 2xl:-ml-4' },
-  { step: 'Avaliação', image: 'icons/evaluation.png', rotate: '-ml-8 rotate-180 sm:ml-3 lg:ml-5 2xl:ml-16 2xl:-mb-7' },
-  { step: 'Testes', image: 'icons/test.png', rotate: 'rotate-180 -ml-2 sm:ml-8 2xl:ml-16 2xl:-mb-10 2xl:ml-20' },
+  { step: 'Análise', image: 'icons/web-analytics.png', rotate: 'ml-[8.3rem] -mt-5 sm:ml-[17rem] md:ml-[23rem] lg:ml-[30rem]' },
+  { step: 'Design', image: 'icons/design.png', rotate: 'ml-[8.3rem] -mt-5 sm:ml-[17rem] md:ml-[23rem] lg:ml-[30rem]' },
+  { step: 'Aplicação', image: 'icons/implementation.png', rotate: 'rotate-90 ml-6 -mb-48 sm:ml-10 sm:-mb-[15rem] md:-mb-[16rem] md:ml-[3rem] lg:-mb-64 lg:ml-10' },
+  { step: 'Manutenção', image: 'icons/maintenance.png', rotate: '-rotate-90 -ml-7 -mt-48 sm:-ml-8 sm:-mt-[15rem] md:-ml-8 md:-mt-[16rem] lg:ml-16 lg:-mt-64 lg:-ml-10' },
+  { step: 'Avaliação', image: 'icons/evaluation.png', rotate: 'rotate-180 -ml-[9rem] sm:-ml-[18rem] md:-ml-[24rem] lg:-ml-[32rem] lg:-mb-7' },
+  { step: 'Testes', image: 'icons/test.png', rotate: 'rotate-180 -ml-[9rem] sm:-ml-[18rem] md:-ml-[24rem] lg:ml-16 lg:-mb-10 lg:-ml-[32rem]' },
 ]
 ---
 
-<div class="w-screen h-full mb-48 md:mb-60 sm:mt-28 flex justify-center">
-  <div class="max-w-7xl h-full w-full flex flex-col gap-20 px-2 sm:px-4 xl:px-0">
-    <header class="flex flex-col px-2 sm:px-0">
+<div class="w-screen h-full mb-48 md:mb-80 sm:mt-28 flex justify-center">
+  <div class="max-w-7xl h-full w-full flex flex-col gap-20 px-2 sm:px-3 xl:px-0">
+    <header class="flex flex-col px-2 sm:px-0 lg:px-12 xl:px-16">
       <H1 text="Processo" extraStyles="md:-ml-1" />
       <h3 class="text-xl font-helveticaNowTextLight">Como trabalhamos</h3>
     </header>
-    <div class="grid grid-cols-3 gap-x-6 gap-y-10 lg:gap-32">
+    <div class="grid grid-cols-3 gap-x-6 gap-y-24 sm:gap-32">
       {process.map(process => (
-        <div class="flex items-center gap-7">
-          <section class="grid place-content-start place-items-start">
+        <div class="flex items-center justify-center gap-7">
+          <section class="grid place-items-center place-content-center">
             <img src={process.image} alt="" class="w-14 md:w-20 h-auto select-none" />
             <p class="font-helveticaNowText text-lg lg:text-4xl">{process.step}</p>
           </section>
-          <figure class={"relative scale-[.4] sm:scale-[.6] lg:scale-75 " + process.rotate}>
+          <figure class={"absolute scale-[.4] sm:scale-[.6] lg:scale-75 " + process.rotate}>
             <AnimatedArrow />
           </figure>
         </div>
