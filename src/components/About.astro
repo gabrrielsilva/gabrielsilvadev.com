@@ -1,21 +1,24 @@
-<div class='h-full xl:h-[50vh] w-full bg-brand flex justify-center px-3 pt-10 pb-3 xl:p-0'>
+---
+import H1 from './typography/H1.astro';
+---
+
+<div id="about" class='h-full w-full flex justify-center px-3 pt-40 pb-14 xl:pt-12 xl:pb-32'>
   <div class='grid w-full max-w-6xl gap-10 md:grid-cols-2 place-content-center place-items-center md:mb-10'>
-    <div class="grid gap-5">
-      <h1 class='text-3xl md:text-5xl font-matterHeavy'>Quem sou eu?</h1>
-      <p class='text-[15px] lg:text-lg text-black/90 font-matterRegular text-justify'>
-        Meu nome é Gabriel Silva, gosto de carros e uma boa música. Estudo e aplico tecnologias desde 2020,
-        quando entrei no IFSP. Antes de entrar no Instituto eu já programava arduinos, logo quando
-        ingressei virei bolsista, fiz iniciação científica na área da Indústria 4.0, onde
-        programei Raspberry Pi para automatizar máquinas antigas. Na federal eu também consegui criar minha
-        própria bolsa de estudos, com o tema Micromobilidade elétrica. Em 2021 fui convidado para trabalhar
-        em uma software house, onde aprendi muito e conheci novas tecnologias. Desde então sou apaixonado
-        por criar soluções, principalmente por automatizar processos. Acredito que a tecnologia deixa tudo
-        mais legal.
+    <div class='grid gap-5'>
+      <H1 text='Gabriel Silva' extraStyles='-ml-1' />
+      <h3 class="text-xl font-helveticaNowTextLight -mt-5">Fundador</h3>
+      <p class='text-[15px] lg:text-xl text-black/90 font-helveticaNowTextMedium'>
+        Gabriel Silva, desenvolvedor de software full stack. Estuda e aplica tecnologias desde 2020,
+        quando entrou no IFSP para cursar Eletroeletrônica. Antes de entrar no Instituto já programava
+        arduinos, logo quando ingressou virou bolsista, fez iniciação científica na área da Indústria
+        4.0, onde programou Raspberry Pi para automatizar máquinas antigas. Na federal também conseguiu
+        criar sua própria bolsa de estudos, com o tema Micromobilidade Elétrica. Em 2021 foi convidado
+        para trabalhar em uma software house. Desde então se dedicou a resolver problemas com a
+        tecnologia, principalmente por automatizar processos.
       </p>
     </div>
-    <div class="relative select-none xl:-mr-1 xl:-mb-5">
-      <img class="mt-10 border-2 border-black brightness-110 saturate-0 rounded-3xl" src="images/drawings.png" alt="alguns dos meus desenhos de carros" />
-      <img class="absolute right-0 -top-8 -rotate-12 2xl:-right-44 2xl:top-0 mix-blend-darken w-44" src="images/arrow.png" alt="flecha apontando para os desenhos: também faço alguns desenhos" />
-    </div>
+    <figure class="w-full flex items-center justify-end">
+      <img src="images/gabriel.png" alt="Gabriel Silva" class="rounded md:rounded-[2.8rem] lg:h-[30rem] lg:w-[30rem] grayscale bg-black/5">
+    </figure>
   </div>
 </div>
