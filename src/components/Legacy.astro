@@ -5,7 +5,9 @@ import Paragraph from './typography/Paragraph.astro';
 
 ---
 
-<div class="flex items-center justify-center w-full h-screen sm:h-full sm:pt-40 sm:pb-24 md:pb-60">
+<div class="relative flex items-center justify-center w-full h-screen sm:h-full sm:pt-40 sm:pb-24 md:pb-60">
+  <img src="icons/circles2.svg" alt="" class="absolute -right-32 lg:-right-60 -bottom-10 sm:-bottom-52 lg:-bottom-60 w-[15rem] sm:w-[20rem] md:w-[25rem] lg:w-[30rem] md:-right-52">
+
   <div class="flex flex-col max-w-6xl gap-5 px-4 xl:px-0 md:grid md:grid-cols-2 md:place-content-center lg:gap-10">
     <H1 text="Seus problemas, nossas soluções." extraStyles="xl:max-w-md" />
     <div class="flex flex-col md:justify-between lg:justify-center">

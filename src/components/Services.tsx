@@ -84,8 +84,7 @@ export default function ServiceTabs() {
 
   return (
     <div className='relative flex flex-col items-center w-full h-full px-3 overflow-hidden bg-secondaryBrand'>
-      {/* <img src="icons/circles2.svg" alt="" className="animate-pulse hidden h-[30rem] w-[30rem] absolute -left-60 top-[40%] -translate-y-1/2 md:block" /> */}
-      <img src="icons/circles1.svg" alt="" className="animate-spin-slow hidden h-[30rem] w-[30rem] absolute -right-24 bottom-60 md:block select-none" />
+      {/* <img src="icons/circles1.svg" alt="" className="animate-spin-slow hidden h-[30rem] w-[30rem] absolute -right-24 bottom-60 md:block select-none" /> */}
 
       <div className='z-10 flex flex-col w-full max-w-6xl gap-10 md:border-t-2 md:gap-16 md:py-28 md:border-t-black/10'>
         <header className="flex flex-col gap-5">
