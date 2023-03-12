@@ -99,8 +99,8 @@ export default function ServiceTabs() {
                 key={serviceButton.name} 
                 onClick={() => setService(services.find(s => s.name === serviceButton.name) as typeof service)}
                 className={
-                  "flex items-center justify-center select-none lg:w-auto px-4 py-[0.35rem] lg:py-4 text-[16px] font-helveticaNowTextMedium leading-4 rounded-full h-[2.75rem] lg:h-auto bg-brand duration-200 gap-2 hover:bg-white hover:ring-2 hover:ring-black "
-                  + (service.name === serviceButton.name ? 'bg-white text-black invert' : '')
+                  "flex items-center justify-center select-none lg:w-auto px-4 py-[0.35rem] lg:py-4 text-[16px] font-helveticaNowTextMedium leading-4 rounded-full h-[2.75rem] lg:h-auto duration-200 gap-2 hover:bg-white hover:ring-2 hover:ring-black "
+                  + (service.name === serviceButton.name ? 'bg-white text-black invert' : 'bg-brand')
                 }
               >
                 {serviceButton.name}{serviceButton.icon && <img src={serviceButton.icon} alt="" className="w-5 h-5" />}
