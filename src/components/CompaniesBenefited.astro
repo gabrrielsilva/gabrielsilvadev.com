@@ -1,8 +1,17 @@
-<div class="flex flex-col w-full h-20 mt-5 mb-20 text-center rounded md:h-40 md:mb-28 md:mt-20">
-  <h3 class="text-[1rem] text-white md:text-3xl font-matterRegular">Empresas beneficiadas por minhas <span class="italic">soluções</span></h3>
-  <section class="flex items-center justify-between">
-    <img src="icons/tobrasil.png" alt="" class="w-20 transition duration-500 md:w-32 hover:grayscale-0 grayscale hover:brightness-100 brightness-150 opacity-80 hover:opacity-100" />
-    <img src="icons/infinitel.png" alt="" class="w-[4.7rem] transition duration-500 md:w-28 hover:grayscale-0 grayscale hover:brightness-100 brightness-150 opacity-80 hover:opacity-100" />
-    <img src="icons/tim.svg" alt="" class="w-24 transition duration-500 md:w-36 hover:grayscale-0 grayscale hover:brightness-100 brightness-200 opacity-80 hover:opacity-100" />
+---
+import Paragraph from './typography/Paragraph.astro';
+
+---
+
+<div class="justify-center hidden w-screen h-full mb-20 md:flex">
+  <section class="w-full h-full max-w-6xl px-3 text-center xl:px-0">
+    <Paragraph text="Empresas beneficiadas nossas soluções" extraStyles="font-helveticaNowTextMedium" />
+    <div class="w-full h-5 mt-3 border-t-2 border-x-2 border-black/10" />
+
+    <div class="flex items-center justify-between -mt-5">
+      <img src="icons/tobrasil.png" alt="" class="w-24 h-24 brightness-150 grayscale" />
+      <img src="icons/infinitel.png" alt="" class="w-24 h-24 brightness-150 grayscale" />
+      <img src="icons/tim.svg" alt="" class="w-24 h-24 brightness-150 grayscale" />
+    </div>
   </section>
 </div>

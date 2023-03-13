@@ -1,5 +1,23 @@
 ---
 import H1 from './typography/H1.astro';
+
+const socialNetworks = [
+  {
+    name: 'GitHub',
+    iconPath: '/icons/github.svg',
+    link: 'https://github.com/gabrrielsilva'
+  },
+  {
+    name: 'LinkedIn',
+    iconPath: '/icons/linkedin.svg',
+    link: 'https://linkedin.com/in/gabriel-silva-44a075208'
+  },
+  {
+    name: 'Twitter',
+    iconPath: '/icons/twitter.svg',
+    link: 'https://twitter.com/gabrielsqrt'
+  }
+]
 ---
 
 <div id="about" class='h-full w-full flex justify-center px-3 pt-40 pb-14 xl:pt-12 xl:pb-32'>
@@ -16,6 +34,13 @@ import H1 from './typography/H1.astro';
         para trabalhar em uma software house. Desde então se dedicou a resolver problemas com a
         tecnologia, principalmente por automatizar processos.
       </p>
+      <section class="flex items-center gap-1">
+        {socialNetworks.map(socialNetwork => (
+          <a href={socialNetwork.link} class="h-10 w-10 bg-zinc-800 rounded flex justify-center items-center">
+            <img src={socialNetwork.iconPath} alt={socialNetwork.name} class="h-6 w-6 invert brightness-0" />
+          </a>
+        ))}
+      </section>
     </div>
     <figure class="w-full flex items-center justify-end">
       <img src="images/gabriel.png" alt="Gabriel Silva" class="rounded md:rounded-[2.8rem] lg:h-[30rem] lg:w-[30rem] grayscale rotate-6 bg-black/5 select-none">
